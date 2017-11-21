@@ -24,3 +24,17 @@ C:\xampp\htdocs\Web\Web.UI\obj\Debug\Web.UI.csprojResolveAssemblyReference.cache
 C:\xampp\htdocs\Web\Web.UI\obj\Debug\Web.UI.csproj.CoreCompileInputs.cache
 C:\xampp\htdocs\Web\Web.UI\obj\Debug\Web.UI.dll
 C:\xampp\htdocs\Web\Web.UI\obj\Debug\Web.UI.pdb
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\bin\Web.UI.dll.config
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\bin\Web.UI.dll
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\bin\Web.UI.pdb
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\bin\EntityFramework.dll
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\bin\EntityFramework.SqlServer.dll
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\bin\Web.Model.dll
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\bin\Web.Model.pdb
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\bin\Web.Model.dll.config
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\bin\EntityFramework.xml
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\bin\EntityFramework.SqlServer.xml
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\obj\Debug\Web.UI.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\obj\Debug\Web.UI.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\obj\Debug\Web.UI.dll
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\obj\Debug\Web.UI.pdb

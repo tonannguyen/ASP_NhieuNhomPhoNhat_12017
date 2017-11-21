@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Root.master.cs" Inherits="Web.UI.Root" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/App_Themes/Theme1/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/App_Themes/Theme1/css/styles.css">
+    <script type="text/javascript" src="/Scripts/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/App_Themes/Theme1/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    	<!-- Begin Header -->
+    <header class="topheader">
+    	<div class="container">
+        	<div class="logo">
+            	<a href="index.html"><img src="images/logo.png" alt="logo"></a>
+            </div>
+            
+            <nav class="navbar navbar-default">
+              
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                  </button>
+                  
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Page 1</a></li>
+                    <li><a href="#">Page 2</a></li> 
+                    <li><a href="#">Page 3</a></li> 
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                  </ul>
+                </div>
+
+            </nav>
+            
+            
+        </div>
+        <div class="clearfix"></div>
+    </header>
+    <!-- End Header -->
+    <div class="clearfix"></div>
+    
+    <!-- Begin Products -->
+        <asp:ContentPlaceHolder ID="Main" runat="server"></asp:ContentPlaceHolder>
+    <!-- End Products -->
+    
+    <div class="clearfix"></div>
+    
+    <!-- Begin Footer -->
+    <footer>
+    	&copy; 2015 | Họ tên - MSSV
+    </footer>
+    <!-- End Footer -->
+    </form>
+</body>
+</html>

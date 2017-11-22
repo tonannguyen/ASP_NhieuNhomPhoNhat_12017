@@ -29,3 +29,14 @@ D:\ASP\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\EntityFramework.
 D:\ASP\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\obj\Debug\Web.Model.csprojResolveAssemblyReference.cache
 D:\ASP\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\obj\Debug\Web.Model.dll
 D:\ASP\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\obj\Debug\Web.Model.pdb
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\Web.Model.dll.config
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\Web.Model.dll
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\Web.Model.pdb
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\EntityFramework.dll
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\EntityFramework.xml
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\obj\Debug\Web.Model.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\obj\Debug\Web.Model.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\obj\Debug\Web.Model.dll
+C:\xampp\htdocs\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\obj\Debug\Web.Model.pdb

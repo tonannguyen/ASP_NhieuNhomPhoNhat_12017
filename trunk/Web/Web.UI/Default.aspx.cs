@@ -12,12 +12,14 @@ namespace Web.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (Session["logined"] != null)
             {
-                name.Text = "Welcome";
+                
             }
-            else
-                Response.Redirect("~/Login.aspx");
+           
+            
+            
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)

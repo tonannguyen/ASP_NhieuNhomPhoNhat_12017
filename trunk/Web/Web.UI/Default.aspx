@@ -3,6 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
 
+    <form id="form1" runat="server">
+
     <div class="right_col" role="main">
           <!-- top tiles -->
           <div class="row tile_count">
@@ -52,9 +54,10 @@
                 </div>
 
                 <div class="col-md-12 col-sm-9 col-xs-12">
-                  <div id="chart_plot_01" class="demo-placeholder"></div>
+                  <div id="chart_plot_01" class="demo-placeholder">
+                  <asp:Button ID="btnLogout" runat="server" Text="Button" OnClick="btnLogout_Click"/>
+                    </div>
                 </div>
-
                 <div class="clearfix"></div>
               </div>
             </div>
@@ -62,4 +65,5 @@
           </div>
           <br />
         </div>
+    </form>
 </asp:Content>

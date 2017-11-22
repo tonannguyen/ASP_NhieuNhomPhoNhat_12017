@@ -15,8 +15,13 @@ namespace Web.UI
             
             if (Session["logined"] != null)
             {
-                
             }
+            else
+            {
+                Response.Redirect("~/Login.aspx");
+            }
+       
+                
            
             
             

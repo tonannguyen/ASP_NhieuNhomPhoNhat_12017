@@ -211,6 +211,7 @@
     <Content Include="App_Themes\Theme1\vendors\jquery\src\var\support.js" />
     <Content Include="App_Themes\Theme1\vendors\jquery\src\var\toString.js" />
     <Content Include="App_Themes\Theme1\vendors\jquery\src\wrap.js" />
+    <Content Include="EditStaff.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="App_Themes\Theme1\vendors\bootstrap\.bower.json" />
@@ -380,6 +381,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditStaff.aspx.cs">
+      <DependentUpon>EditStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditStaff.aspx.designer.cs">
+      <DependentUpon>EditStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

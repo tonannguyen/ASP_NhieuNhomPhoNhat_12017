@@ -75,7 +75,7 @@
                   </li>
                    <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">Chỉnh sửa thông tin Nhân Viên</a></li>
+                      <li><a href="EditStaff.aspx">Chỉnh sửa thông tin Nhân Viên</a></li>
                        <li><a href="form_advanced.html">Chỉnh sửa thông tin hoa</a></li>
 
                    </ul>

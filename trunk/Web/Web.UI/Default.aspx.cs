@@ -17,7 +17,7 @@ namespace Web.UI
                 name.Text = "Welcome";
             }
             else
-                Response.Redirect("http://google.com");
+                Response.Redirect("~/Login.aspx");
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)

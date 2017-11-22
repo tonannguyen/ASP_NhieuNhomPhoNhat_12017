@@ -25,5 +25,8 @@ namespace Web.Model
         public virtual DbSet<Type> Types { get; set; }
         public virtual DbSet<Staff> Staff { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
+        public virtual DbSet<Revenue> Revenues { get; set; }
+        public virtual DbSet<Bill> Bills { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
     }
 }

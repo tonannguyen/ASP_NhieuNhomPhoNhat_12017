@@ -25,6 +25,7 @@ namespace Web.Model
 
         //mapping
         public virtual Position Position { get; set; }
+        public virtual ICollection<Bill> Bills { get; set; }
 
         public Staff()
         {
@@ -38,6 +39,7 @@ namespace Web.Model
             this.Bonus = 0;
             this.CreatedTime = DateTime.Now;
             this.UpdatedTime = DateTime.Now;
+            this.Bills = new HashSet<Bill>();
         }
     }
 }

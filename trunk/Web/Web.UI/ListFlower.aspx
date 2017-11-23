@@ -9,7 +9,7 @@
                 <h3>Danh sách loại hoa</h3>
               </div>
             </div>
-
+              <button href="AddFlower.aspx" class="pull-right">Thêm Hoa</button>
             <div class="clearfix"></div>
 
             <div class="row">
@@ -33,14 +33,18 @@
                           <td>Tokyo</td>
                           <td>65</td>
                           <td>2011/07/25</td>
-                          <td>$170,750</td>
+                          <td><button href="" class="pull-right">Chỉnh Sửa</button>
+                              <button href="#" class="pull-right">Xóa</button></td>
                         </tr><tr>
                           <td>Garrett Winters</td>
                           <td>Accountant</td>
                           <td>Tokyo</td>
                           <td>63</td>
-                          <td>2011/07/25</td>
-                          <td>$170,750</td>
+                          <td>asdsa</td>
+                          <td>
+                              <button href="" class="pull-right">Chỉnh Sửa</button>
+                              <button href="#" class="pull-right">Xóa</button>
+                          </td>
                         </tr>
                     </table>
                   </div>

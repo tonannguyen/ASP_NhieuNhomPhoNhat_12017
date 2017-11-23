@@ -68,7 +68,7 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.html">Trang chủ</a></li>
+                      <li><a href="Default.aspx">Trang chủ</a></li>
                       <li><a href="index2.html">Nhập hóa đơn</a></li>
                       <!-- <li><a href="index3.html">Dashboard3</a></li> -->
                     </ul>
@@ -76,7 +76,7 @@
                    <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="EditStaff.aspx">Chỉnh sửa thông tin Nhân Viên</a></li>
-                       <li><a href="form_advanced.html">Chỉnh sửa thông tin hoa</a></li>
+                       <li><a href="UpdateFlower.aspx">Chỉnh sửa thông tin hoa</a></li>
 
                    </ul>
                   </li>

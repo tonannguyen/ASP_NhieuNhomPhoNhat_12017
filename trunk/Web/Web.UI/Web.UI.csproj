@@ -212,6 +212,7 @@
     <Content Include="App_Themes\Theme1\vendors\jquery\src\var\toString.js" />
     <Content Include="App_Themes\Theme1\vendors\jquery\src\wrap.js" />
     <Content Include="EditStaff.aspx" />
+    <Content Include="ListFlower.aspx" />
     <Content Include="ListStaff.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
@@ -358,6 +359,7 @@
     <Content Include="App_Themes\Theme1\vendors\jquery\README.md" />
     <Content Include="App_Themes\Theme1\vendors\jquery\src\.jshintrc" />
     <Content Include="Root.Master" />
+    <Content Include="WriteBill.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -394,6 +396,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ListFlower.aspx.cs">
+      <DependentUpon>ListFlower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListFlower.aspx.designer.cs">
+      <DependentUpon>ListFlower.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ListStaff.aspx.cs">
       <DependentUpon>ListStaff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -429,6 +438,13 @@
     </Compile>
     <Compile Include="UpdateFlower.aspx.designer.cs">
       <DependentUpon>UpdateFlower.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WriteBill.aspx.cs">
+      <DependentUpon>WriteBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WriteBill.aspx.designer.cs">
+      <DependentUpon>WriteBill.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

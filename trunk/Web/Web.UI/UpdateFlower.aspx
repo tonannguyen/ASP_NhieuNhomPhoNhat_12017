@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Root.Master" AutoEventWireup="true" CodeBehind="UpdateFlower.aspx.cs" Inherits="Web.UI.Default" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
-
+    
     <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
@@ -60,8 +61,11 @@
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           <button class="btn btn-primary" type="button">Cancel</button>
-              <button class="btn btn-primary" type="reset">Reset</button>
+                           <button class="btn btn-primary" type="reset">Reset</button>
                           <button type="submit" class="btn btn-success">Submit</button>
+                            <form runat="server">
+                            <asp:Button ID="btnLogout" runat="server"  Text="Button" OnClick="btnLogout_Click"/>
+                                </form>
                         </div>
                       </div>
 
@@ -75,4 +79,5 @@
           </div>
         </div>
         <!-- /page content -->
+        
 </asp:Content>

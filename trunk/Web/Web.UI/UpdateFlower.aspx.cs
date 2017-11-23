@@ -19,5 +19,10 @@ namespace Web.UI
                 Response.Redirect("~/Login.aspx");
             }
         }
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Remove("logined");
+            Response.Redirect("~/Login.aspx");
+        }
     }
 }

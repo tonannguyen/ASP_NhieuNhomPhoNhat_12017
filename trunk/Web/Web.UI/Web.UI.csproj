@@ -212,7 +212,8 @@
     <Content Include="App_Themes\Theme1\vendors\jquery\src\var\toString.js" />
     <Content Include="App_Themes\Theme1\vendors\jquery\src\wrap.js" />
     <Content Include="EditStaff.aspx" />
-    <Content Include="ListFlower.aspx" />
+    <Content Include="Flower\DeleteFlower.aspx" />
+    <Content Include="Flower\ListFlower.aspx" />
     <Content Include="ListStaff.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
@@ -372,7 +373,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.11.2.min.js" />
     <Content Include="signUp.aspx" />
-    <Content Include="UpdateFlower.aspx" />
+    <Content Include="Flower\UpdateFlower.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -393,14 +394,21 @@
     <Compile Include="EditStaff.aspx.designer.cs">
       <DependentUpon>EditStaff.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Flower\DeleteFlower.aspx.cs">
+      <DependentUpon>DeleteFlower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Flower\DeleteFlower.aspx.designer.cs">
+      <DependentUpon>DeleteFlower.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ListFlower.aspx.cs">
+    <Compile Include="Flower\ListFlower.aspx.cs">
       <DependentUpon>ListFlower.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ListFlower.aspx.designer.cs">
+    <Compile Include="Flower\ListFlower.aspx.designer.cs">
       <DependentUpon>ListFlower.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListStaff.aspx.cs">
@@ -432,11 +440,11 @@
     <Compile Include="signUp.aspx.designer.cs">
       <DependentUpon>signUp.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UpdateFlower.aspx.cs">
+    <Compile Include="Flower\UpdateFlower.aspx.cs">
       <DependentUpon>UpdateFlower.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UpdateFlower.aspx.designer.cs">
+    <Compile Include="Flower\UpdateFlower.aspx.designer.cs">
       <DependentUpon>UpdateFlower.aspx</DependentUpon>
     </Compile>
     <Compile Include="WriteBill.aspx.cs">
@@ -450,6 +458,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Uploads\Flowers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Web.Model\Web.Model.csproj">

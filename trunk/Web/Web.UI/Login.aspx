@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-
+    <title>Flower store </title>
 <head runat="server">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    
     <style>
       /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
       @import url(https://fonts.googleapis.com/css?family=Open+Sans);
@@ -75,8 +76,9 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
     <form id="form1" runat="server">
         <div class="login">
 	        <h1>Login</h1>
-    	        <input id="txtUserName" type="text" name="u" placeholder="Username" required="required" />
-                <input id="txtPassword" type="password" name="p" placeholder="Password"required="required" />
+            <asp:TextBox ID="txtUserName" runat="server" placeholder="Username" required="required" ></asp:TextBox>
+            <asp:TextBox ID="txtPassword" runat="server" placeholder="Password" required="required" TextMode="Password"></asp:TextBox>
+    	        
                 <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Login" class="btn btn-primary btn-block btn-large"/>
                 
         </div>

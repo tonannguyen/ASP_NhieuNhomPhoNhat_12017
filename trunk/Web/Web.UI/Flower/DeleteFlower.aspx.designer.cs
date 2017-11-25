@@ -11,7 +11,7 @@ namespace Web.UI
 {
 
 
-    public partial class ListFlower
+    public partial class DeleteFlower
     {
     }
 }

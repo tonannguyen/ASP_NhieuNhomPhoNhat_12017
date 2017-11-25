@@ -22,6 +22,7 @@ namespace Web.Model
 
         //mapping
         public virtual Type Type { get; set; }
+        public virtual ICollection<Item> Items { get; set; }
 
         public Flower()
         {
@@ -32,6 +33,7 @@ namespace Web.Model
             this.Description = "";
             this.CreatedTime = DateTime.Now;
             this.UpdatedTime = DateTime.Now;
+            this.Items = new HashSet<Item>();
         }
 
     }

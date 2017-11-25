@@ -37,6 +37,18 @@ namespace Web.Model.Migrations
                 staff.Bonus = 1;
                 context.Staff.Add(staff);
             }
+
+           /* if (context.Flowers.Any() == false)
+            {
+                var flower = new Flower();
+                flower.TypeID = 1;
+                flower.Name = "a";
+                flower.Price = 0;
+                flower.Quantity = 0;
+                flower.Image = "";
+                flower.Description = "";
+                context.Flowers.Add(flower);
+            }*/
         }
     }
 }

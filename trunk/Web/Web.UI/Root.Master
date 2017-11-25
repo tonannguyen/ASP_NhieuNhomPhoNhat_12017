@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	  
-    <title>Gentelella Alela! | </title>
+    <title>Flower store </title>
 
     <!-- Bootstrap -->
     <link href="/App_Themes/Theme1/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,12 +22,13 @@
     </asp:ContentPlaceHolder>
 </head>
 <body class="nav-md">
+ 
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Flowers</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -52,11 +53,11 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
 
-                      <li><a href="Default.aspx">Trang Chủ</a></li>
+                      <li><a href="Default.aspx">Home</a></li>
                       <li><a href="WriteBill.aspx">Hóa Đơn</a></li>
                       <!-- <li><a href="index3.html">Dashboard3</a></li> -->
-                      <li><a href="ListFlower.aspx">Hoa</a></li>
-                      <li><a href="ListStaff.aspx">Nhân Viên</a></li>
+                      <li><a href="/Flower/ListFlower.aspx">Flowers</a></li>
+                      <li><a href="ListStaff.aspx">Staff</a></li>
                 </ul>
             </div>
             </div>
@@ -73,7 +74,8 @@
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+              <a data-toggle="tooltip" data-placement="top" title="Logfffout" href="login.html">
+                  
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
@@ -200,6 +202,6 @@
     <script src="/App_Themes/Theme1/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="/App_Themes/Theme1/build/js/custom.min.js"></script>
-    </form>
+
 </body>
 </html>

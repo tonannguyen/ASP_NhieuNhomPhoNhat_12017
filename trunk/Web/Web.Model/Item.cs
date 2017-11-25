@@ -19,7 +19,7 @@ namespace Web.Model
 
         //mapping
         public virtual Bill Bill { get; set; }
-        public virtual ICollection<Flower> Flowers { get; set; }
+        public virtual Flower Flower { get; set; }
 
         public Item()
         {
@@ -27,7 +27,7 @@ namespace Web.Model
             this.Quantity = 0;
             this.CreatedTime = DateTime.Now;
             this.UpdatedTime = DateTime.Now;
-            this.Flowers = new HashSet<Flower>();
+            
            
         }
 

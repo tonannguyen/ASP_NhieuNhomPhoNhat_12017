@@ -15,6 +15,7 @@ namespace Web.UI
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+            
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -22,13 +23,13 @@ namespace Web.UI
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MasterDbContext"].ToString());
 
             con.Open();
-            string query = "select count(*) from Staffs where Name='" + Request.Form["u"] + "' and Password='" + Request.Form["p"] + "'";
+            string query = "select count(*) from Staffs where Name='" + txtUserName.Text + "' and Password='" + txtPassword.Text + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             string output = cmd.ExecuteScalar().ToString();
 
             if (output == "1")
             {
-                Session["logined"] = Request.Form["u"];
+                Session["logined"] = txtUserName.Text;
                 Response.Redirect("~/Default.aspx");
             }
             else

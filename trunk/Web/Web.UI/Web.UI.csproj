@@ -211,6 +211,8 @@
     <Content Include="App_Themes\Theme1\vendors\jquery\src\var\support.js" />
     <Content Include="App_Themes\Theme1\vendors\jquery\src\var\toString.js" />
     <Content Include="App_Themes\Theme1\vendors\jquery\src\wrap.js" />
+    <Content Include="Flower\DetailFlower.aspx" />
+    <Content Include="Flower\UpdateFlower.aspx" />
     <Content Include="Staff\DeleteStaff.aspx" />
     <Content Include="Flower\DeleteFlower.aspx" />
     <Content Include="Flower\ListFlower.aspx" />
@@ -386,6 +388,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Flower\DetailFlower.aspx.cs">
+      <DependentUpon>DetailFlower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Flower\DetailFlower.aspx.designer.cs">
+      <DependentUpon>DetailFlower.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Flower\UpdateFlower.aspx.cs">
+      <DependentUpon>UpdateFlower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Flower\UpdateFlower.aspx.designer.cs">
+      <DependentUpon>UpdateFlower.aspx</DependentUpon>
     </Compile>
     <Compile Include="Staff\DeleteStaff.aspx.cs">
       <DependentUpon>DeleteStaff.aspx</DependentUpon>

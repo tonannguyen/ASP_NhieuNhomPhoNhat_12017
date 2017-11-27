@@ -69,7 +69,7 @@ namespace Web.UI
                     // edit
                     var id = Convert.ToInt32(Request.QueryString["ID"].ToString());
                     var item = db.Flowers.Find(id);
-                    
+
                     if (item != null)
                     {
                         // set data
@@ -78,10 +78,10 @@ namespace Web.UI
                         item.Quantity = Convert.ToInt32(txtQuantity.Text);
                         item.TypeID = Convert.ToInt32(typeList.SelectedValue);
                         item.Description = description.InnerText;
-                        
+
 
                         // upload solving
-                        if(image.HasFile)
+                        if (image.HasFile)
                         {
                             // kiem tra neu file ko fai file hinh
                             var ext = Path.GetExtension(image.PostedFile.FileName).ToLower();
@@ -91,7 +91,7 @@ namespace Web.UI
 
                             // new file name
                             Random rd = new Random();
-                            var fileName = DateTime.Now.ToString("dd_MM_yyyy_hh_mm_ss_") + Common.HashMD5(rd.Next(1,9999999).ToString()) + ext;
+                            var fileName = DateTime.Now.ToString("dd_MM_yyyy_hh_mm_ss_") + Common.HashMD5(rd.Next(1, 9999999).ToString()) + ext;
 
                             // save file
                             image.PostedFile.SaveAs(HttpContext.Current.Server.MapPath("~/Uploads/Flowers/" + fileName));
@@ -112,14 +112,14 @@ namespace Web.UI
                 }
                 else
                 {
-                    
+
                     var flower = new Flower();
                     flower.Name = txtName.Text;
                     flower.Price = float.Parse(txtPrice.Text);
                     flower.Quantity = Convert.ToInt32(txtQuantity.Text);
                     flower.TypeID = Convert.ToInt32(typeList.SelectedValue);
                     flower.Description = description.InnerText;
-                   
+
 
                     // upload solving
                     if (image.HasFile)
@@ -139,7 +139,7 @@ namespace Web.UI
 
                         flower.Image = fileName;
 
-                        
+
                     }
 
                     // save
@@ -149,6 +149,15 @@ namespace Web.UI
                     Response.Redirect("~/Flower/ListFlower.aspx");
                 }
             }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtName.Text = "";
+            txtPrice.Text = "";
+            txtQuantity.Text = "";
+            description.InnerText = "";
+            typeList.SelectedIndex = 0;
         }
 
         private DataTable GetType()

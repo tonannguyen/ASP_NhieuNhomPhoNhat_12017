@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace Web.Model
 {
-    public class Staff
+    public class Employee
     {
+
         [Key]
         public int ID { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
-        public int UserRole { get; set; }
+
         public string Phone { get; set; }
         public string Adress { get; set; }
         public string Avata { get; set; }
@@ -22,17 +23,16 @@ namespace Web.Model
         public float Bonus { get; set; }
         public DateTime CreatedTime { get; set; }
         public DateTime UpdatedTime { get; set; }
-
         //mapping
         public virtual Position Position { get; set; }
         public virtual ICollection<Bill> Bills { get; set; }
 
-        public Staff()
+        public Employee()
         {
             this.Name = "";
             this.Password = "";
-            this.Phone = "123456";
-            this.Adress = "HCM";
+            this.Phone = "";
+            this.Adress = "";
             this.Avata = "";
             this.PositionID = 1;
             this.Salary = 0;
@@ -41,5 +41,6 @@ namespace Web.Model
             this.UpdatedTime = DateTime.Now;
             this.Bills = new HashSet<Bill>();
         }
+
     }
 }

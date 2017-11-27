@@ -16,7 +16,7 @@ namespace Web.Model
         public DateTime UpdatedTime { get; set; }
 
         //mapping
-        public virtual ICollection<Staff> Staff { get; set; }
+        public virtual ICollection<Employee> Employee { get; set; }
 
         public Position()
         {

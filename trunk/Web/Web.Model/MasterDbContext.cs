@@ -23,7 +23,7 @@ namespace Web.Model
         //table
         public virtual DbSet<Flower> Flowers { get; set; }
         public virtual DbSet<Type> Types { get; set; }
-        public virtual DbSet<Staff> Staff { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
         public virtual DbSet<Revenue> Revenues { get; set; }
         public virtual DbSet<Bill> Bills { get; set; }

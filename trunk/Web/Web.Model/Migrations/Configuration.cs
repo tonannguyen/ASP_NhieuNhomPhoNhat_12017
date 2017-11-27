@@ -25,17 +25,17 @@ namespace Web.Model.Migrations
                 context.Positions.Add(pos);
             }
 
-            if(context.Staff.Any() == false)
+            if(context.Employees.Any() == false)
             {
-                var staff = new Staff();
+                var staff = new Employee();
                 staff.Name = "Admin";
                 staff.Password = "123456";
-                staff.UserRole = 0;
+                
                 staff.Phone = "123456";
                 staff.PositionID = 1;
                 staff.Salary = 1;
                 staff.Bonus = 1;
-                context.Staff.Add(staff);
+                context.Employees.Add(staff);
             }
 
            /* if (context.Flowers.Any() == false)

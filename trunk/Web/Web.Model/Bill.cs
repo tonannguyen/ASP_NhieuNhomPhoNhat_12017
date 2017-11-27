@@ -19,7 +19,7 @@ namespace Web.Model
         public DateTime UpdatedTime { get; set; }
 
         //mapping
-        public virtual Staff Staff { get; set; }
+        public virtual Employee Employee { get; set; }
         public virtual ICollection<Item> Items { get; set; }
 
         public Bill()

@@ -57,7 +57,7 @@
                       <li><a href="WriteBill.aspx">Hóa Đơn</a></li>
                       <!-- <li><a href="index3.html">Dashboard3</a></li> -->
                       <li><a href="/Flower/ListFlower.aspx">Flowers</a></li>
-                      <li><a href="ListStaff.aspx">Staff</a></li>
+                      <li><a href="/Staff/ListStaff.aspx">Employees</a></li>
                 </ul>
             </div>
             </div>

@@ -23,7 +23,7 @@ namespace Web.UI
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MasterDbContext"].ToString());
 
             con.Open();
-            string query = "select count(*) from Staffs where Name='" + txtUserName.Text + "' and Password='" + txtPassword.Text + "'";
+            string query = "select count(*) from Employees where Name='" + txtUserName.Text + "' and Password='" + txtPassword.Text + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             string output = cmd.ExecuteScalar().ToString();
 

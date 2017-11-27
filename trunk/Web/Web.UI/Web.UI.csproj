@@ -211,10 +211,10 @@
     <Content Include="App_Themes\Theme1\vendors\jquery\src\var\support.js" />
     <Content Include="App_Themes\Theme1\vendors\jquery\src\var\toString.js" />
     <Content Include="App_Themes\Theme1\vendors\jquery\src\wrap.js" />
-    <Content Include="EditStaff.aspx" />
+    <Content Include="Staff\DeleteStaff.aspx" />
     <Content Include="Flower\DeleteFlower.aspx" />
     <Content Include="Flower\ListFlower.aspx" />
-    <Content Include="ListStaff.aspx" />
+    <Content Include="Staff\ListStaff.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="App_Themes\Theme1\vendors\bootstrap\.bower.json" />
@@ -360,6 +360,7 @@
     <Content Include="App_Themes\Theme1\vendors\jquery\README.md" />
     <Content Include="App_Themes\Theme1\vendors\jquery\src\.jshintrc" />
     <Content Include="Root.Master" />
+    <Content Include="Staff\UpdateStaff.aspx" />
     <Content Include="WriteBill.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -373,7 +374,6 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.11.2.min.js" />
     <Content Include="signUp.aspx" />
-    <Content Include="Flower\UpdateFlower.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -387,12 +387,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EditStaff.aspx.cs">
-      <DependentUpon>EditStaff.aspx</DependentUpon>
+    <Compile Include="Staff\DeleteStaff.aspx.cs">
+      <DependentUpon>DeleteStaff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EditStaff.aspx.designer.cs">
-      <DependentUpon>EditStaff.aspx</DependentUpon>
+    <Compile Include="Staff\DeleteStaff.aspx.designer.cs">
+      <DependentUpon>DeleteStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="Flower\DeleteFlower.aspx.cs">
       <DependentUpon>DeleteFlower.aspx</DependentUpon>
@@ -411,11 +411,11 @@
     <Compile Include="Flower\ListFlower.aspx.designer.cs">
       <DependentUpon>ListFlower.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ListStaff.aspx.cs">
+    <Compile Include="Staff\ListStaff.aspx.cs">
       <DependentUpon>ListStaff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ListStaff.aspx.designer.cs">
+    <Compile Include="Staff\ListStaff.aspx.designer.cs">
       <DependentUpon>ListStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
@@ -440,12 +440,12 @@
     <Compile Include="signUp.aspx.designer.cs">
       <DependentUpon>signUp.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Flower\UpdateFlower.aspx.cs">
-      <DependentUpon>UpdateFlower.aspx</DependentUpon>
+    <Compile Include="Staff\UpdateStaff.aspx.cs">
+      <DependentUpon>UpdateStaff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Flower\UpdateFlower.aspx.designer.cs">
-      <DependentUpon>UpdateFlower.aspx</DependentUpon>
+    <Compile Include="Staff\UpdateStaff.aspx.designer.cs">
+      <DependentUpon>UpdateStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="WriteBill.aspx.cs">
       <DependentUpon>WriteBill.aspx</DependentUpon>
@@ -459,6 +459,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Uploads\Flowers\" />
+    <Folder Include="Uploads\Staff\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Web.Model\Web.Model.csproj">

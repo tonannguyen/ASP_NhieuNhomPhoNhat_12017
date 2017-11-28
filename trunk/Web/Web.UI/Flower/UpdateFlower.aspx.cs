@@ -74,7 +74,7 @@ namespace Web.UI
                     {
                         // set data
                         item.Name = txtName.Text;
-                        item.Price = float.Parse(txtPrice.Text);
+                        item.Price = decimal.Parse(txtPrice.Text);
                         item.Quantity = Convert.ToInt32(txtQuantity.Text);
                         item.TypeID = Convert.ToInt32(typeList.SelectedValue);
                         item.Description = description.InnerText;
@@ -115,7 +115,7 @@ namespace Web.UI
 
                     var flower = new Flower();
                     flower.Name = txtName.Text;
-                    flower.Price = float.Parse(txtPrice.Text);
+                    flower.Price = decimal.Parse(txtPrice.Text);
                     flower.Quantity = Convert.ToInt32(txtQuantity.Text);
                     flower.TypeID = Convert.ToInt32(typeList.SelectedValue);
                     flower.Description = description.InnerText;

@@ -363,6 +363,8 @@
     <Content Include="App_Themes\Theme1\vendors\jquery\src\.jshintrc" />
     <Content Include="Root.Master" />
     <Content Include="Staff\UpdateStaff.aspx" />
+    <Content Include="Type\ListType.aspx" />
+    <Content Include="Type\UpdateType.aspx" />
     <Content Include="WriteBill.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -462,6 +464,20 @@
     </Compile>
     <Compile Include="Staff\UpdateStaff.aspx.designer.cs">
       <DependentUpon>UpdateStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Type\ListType.aspx.cs">
+      <DependentUpon>ListType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Type\ListType.aspx.designer.cs">
+      <DependentUpon>ListType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Type\UpdateType.aspx.cs">
+      <DependentUpon>UpdateType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Type\UpdateType.aspx.designer.cs">
+      <DependentUpon>UpdateType.aspx</DependentUpon>
     </Compile>
     <Compile Include="WriteBill.aspx.cs">
       <DependentUpon>WriteBill.aspx</DependentUpon>

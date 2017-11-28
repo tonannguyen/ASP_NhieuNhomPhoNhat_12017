@@ -19,8 +19,8 @@ namespace Web.Model
         public string Adress { get; set; }
         public string Avata { get; set; }
         public int PositionID { get; set; }
-        public float Salary { get; set; }
-        public float Bonus { get; set; }
+        public decimal Salary { get; set; }
+        public decimal Bonus { get; set; }
         public DateTime CreatedTime { get; set; }
         public DateTime UpdatedTime { get; set; }
         //mapping

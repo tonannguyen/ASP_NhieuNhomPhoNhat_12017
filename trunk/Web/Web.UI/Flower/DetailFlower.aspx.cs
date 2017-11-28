@@ -28,12 +28,14 @@ namespace Web.UI
                 {
                     var id = Convert.ToInt32(Request.QueryString["ID"].ToString());
                     var item = db.Flowers.Find(id);
+                    var type = db.Types.Find(item.TypeID);
 
                     if (item != null)
                     {
                         // set data
-                        
+                        image.Attributes["src"] = "/Uploads/Flowers/" + item.Image;
                         lblName.Text = item.Name;
+                        lblType.Text = type.Name;
                         lblPrice.Text = item.Price.ToString();
                         lblQuantity.Text = item.Quantity.ToString();
                         lblDescription.Text = item.Description;
@@ -46,5 +48,14 @@ namespace Web.UI
             }
 
         }
+
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ListFlower.aspx");
+        }
+
+
     }
+
 }

@@ -78,7 +78,7 @@ namespace Web.UI.Staff
                         item.Phone = txtPhone.Text;
                         item.Adress = txtAdress.Text;
                         item.PositionID = Convert.ToInt32(PositionList.SelectedValue);
-                        item.Salary = float.Parse(txtSalary.Text);
+                        item.Salary = decimal.Parse(txtSalary.Text);
                         // upload solving
                         if (avatar.HasFile)
                         {
@@ -118,7 +118,7 @@ namespace Web.UI.Staff
                     staff.Phone = txtPhone.Text;
                     staff.Adress = txtAdress.Text;
                     staff.PositionID = Convert.ToInt32(PositionList.SelectedValue);
-                    staff.Salary = float.Parse(txtSalary.Text);
+                    staff.Salary = decimal.Parse(txtSalary.Text);
 
 
                     // upload solving

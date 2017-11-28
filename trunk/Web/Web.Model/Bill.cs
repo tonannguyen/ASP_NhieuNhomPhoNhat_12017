@@ -14,7 +14,7 @@ namespace Web.Model
         public int StaffID { get; set; }
         public int Type { get; set; }
         public float Quantity { get; set; }
-        public float Price { get; set; }
+        public decimal Price { get; set; }
         public DateTime CreatedTime { get; set; }
         public DateTime UpdatedTime { get; set; }
 

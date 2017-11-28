@@ -6,7 +6,7 @@
       <div class="">
          <div class="page-title">
             <div class="title_left">
-               <!--  <h3 id="txtTitle">Chỉnh sửa thông tin hoa</h3> -->
+                <h3 id="txtTitle">Detail</h3> 
             </div>
          </div>
          <div class="clearfix"></div>
@@ -19,34 +19,34 @@
                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Image: 
                      </label>
                      <div class="col-md-6 col-sm-6 col-xs-12">
-                         <asp:Image ID="image" runat="server" />
+                         <asp:Image ID="image" runat="server" width="100%"/>
                      </div>
                   </div>
                    <div class="form-group">
                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Name: 
                      </label>
-                     <div class="col-md-6 col-sm-6 col-xs-12">
+                     <div class="col-md-6 col-sm-6 col-xs-12" style="margin-top:8px;">
                          <asp:Label ID="lblName" runat="server" ></asp:Label>
                      </div>
                   </div>
                   <div class="form-group">
                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Type: 
                      </label>
-                     <div class="col-md-6 col-sm-6 col-xs-12">
+                     <div class="col-md-6 col-sm-6 col-xs-12" style="margin-top:8px;">
                          <asp:Label ID="lblType" runat="server" ></asp:Label>
                      </div>
                   </div>
                   <div class="form-group">
                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Price: 
                      </label>
-                     <div class="col-md-6 col-sm-6 col-xs-12">
+                     <div class="col-md-6 col-sm-6 col-xs-12"  style="margin-top:8px;">
                          <asp:Label ID="lblPrice" runat="server" ></asp:Label>
                      </div>
                   </div>
                   <div class="form-group">
                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Quantities: 
                      </label>
-                     <div class="col-md-6 col-sm-6 col-xs-12">
+                     <div class="col-md-6 col-sm-6 col-xs-12"  style="margin-top:8px;">
                          <asp:Label ID="lblQuantity" runat="server" ></asp:Label>
                      </div>
                   </div>
@@ -54,14 +54,14 @@
                   <div class="form-group">
                      <label class="control-label col-md-3 col-sm-3 col-xs-12" >Description: 
                      </label>
-                     <div class="col-md-6 col-sm-6 col-xs-12">
+                     <div class="col-md-6 col-sm-6 col-xs-12"  style="margin-top:8px;">
                          <asp:Label ID="lblDescription" runat="server" ></asp:Label>
                      </div>
                   </div>
                   <div class="ln_solid"></div>
                   <div class="form-group">
                      <div class="col-md-6 col-sm-6 col-xs-12" style="float:right">                        
-                        <asp:Button ID="btnBack" runat="server" Text="Back" CssClass="btn btn-success" />
+                        <asp:Button ID="btnBack" runat="server" Text="Back" CssClass="btn btn-success" OnClick="btnBack_Click" />
                      </div>
                   </div>
                </form>

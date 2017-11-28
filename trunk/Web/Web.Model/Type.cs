@@ -14,6 +14,7 @@ namespace Web.Model
         public string Name { get; set; }
         public DateTime CreatedTime { get; set; }
         public DateTime UpdatedTime { get; set; }
+        public bool Active { get; set; }
 
         //mapping
         public virtual ICollection<Flower> Flowers { get; set; }
@@ -22,6 +23,7 @@ namespace Web.Model
             this.Name = "";
             this.CreatedTime = DateTime.Now;
             this.UpdatedTime = DateTime.Now;
+            this.Active = true;
             this.Flowers = new HashSet<Flower>();
         }
     }

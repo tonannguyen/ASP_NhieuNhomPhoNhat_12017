@@ -170,7 +170,7 @@ namespace Web.UI
             try
             {
                 con.Open();
-                string query = "select * from Types";
+                string query = "select * from Types where Active=1";
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 

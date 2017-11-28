@@ -53,9 +53,9 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
 
-                      <li><a href="Default.aspx">Home</a></li>
-                      <li><a href="WriteBill.aspx">Hóa Đơn</a></li>
-                      <!-- <li><a href="index3.html">Dashboard3</a></li> -->
+                      <li><a href="/Default.aspx">Home</a></li>
+                      <li><a href="/WriteBill.aspx">Hóa Đơn</a></li>
+                      <li><a href="/Type/List.aspx">Types</a></li>
                       <li><a href="/Flower/ListFlower.aspx">Flowers</a></li>
                       <li><a href="/Staff/ListStaff.aspx">Employees</a></li>
                 </ul>

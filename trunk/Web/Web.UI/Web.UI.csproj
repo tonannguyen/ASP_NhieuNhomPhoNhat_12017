@@ -363,7 +363,8 @@
     <Content Include="App_Themes\Theme1\vendors\jquery\src\.jshintrc" />
     <Content Include="Root.Master" />
     <Content Include="Staff\UpdateStaff.aspx" />
-    <Content Include="Type\ListType.aspx" />
+    <Content Include="Type\Delete.aspx" />
+    <Content Include="Type\List.aspx" />
     <Content Include="Type\UpdateType.aspx" />
     <Content Include="WriteBill.aspx" />
     <None Include="Web.Debug.config">
@@ -465,12 +466,19 @@
     <Compile Include="Staff\UpdateStaff.aspx.designer.cs">
       <DependentUpon>UpdateStaff.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Type\ListType.aspx.cs">
-      <DependentUpon>ListType.aspx</DependentUpon>
+    <Compile Include="Type\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Type\ListType.aspx.designer.cs">
-      <DependentUpon>ListType.aspx</DependentUpon>
+    <Compile Include="Type\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Type\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Type\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
     </Compile>
     <Compile Include="Type\UpdateType.aspx.cs">
       <DependentUpon>UpdateType.aspx</DependentUpon>

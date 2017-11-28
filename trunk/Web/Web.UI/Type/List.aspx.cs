@@ -8,9 +8,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Web.UI.Type
+namespace Web.UI
 {
-    public partial class ListType : System.Web.UI.Page
+    public partial class List : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,14 +23,13 @@ namespace Web.UI.Type
                 try
                 {
                     con.Open();
-                    
-                    string query = "select * from Types";
+
+                    string query = "SELECT ID,Name,CreatedTime AS 'Created Time',UpdatedTime AS 'Updated Time' FROM Types WHERE Active=1";
                     SqlCommand cmd = new SqlCommand(query, con);
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
                     adapter.Fill(data);
 
-                    
                     GridViewListType.DataSource = data;
                     GridViewListType.DataBind();
                 }

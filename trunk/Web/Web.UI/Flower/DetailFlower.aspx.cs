@@ -52,7 +52,7 @@ namespace Web.UI
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/ListFlower.aspx");
+            Response.Redirect("/Flower/ListFlower.aspx");
         }
 
 

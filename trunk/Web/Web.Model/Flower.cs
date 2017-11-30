@@ -19,6 +19,8 @@ namespace Web.Model
         public string Description { get; set; }
         public DateTime CreatedTime { get; set; }
         public DateTime UpdatedTime { get; set; }
+        public bool Active { get; set; }
+
 
         //mapping
         public virtual Type Type { get; set; }
@@ -34,6 +36,7 @@ namespace Web.Model
             this.CreatedTime = DateTime.Now;
             this.UpdatedTime = DateTime.Now;
             this.Items = new HashSet<Item>();
+            this.Active = true;
         }
 
     }

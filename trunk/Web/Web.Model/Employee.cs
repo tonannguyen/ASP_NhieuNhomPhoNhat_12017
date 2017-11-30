@@ -23,6 +23,8 @@ namespace Web.Model
         public decimal Bonus { get; set; }
         public DateTime CreatedTime { get; set; }
         public DateTime UpdatedTime { get; set; }
+        public bool Active { get; set; }
+
         //mapping
         public virtual Position Position { get; set; }
         public virtual ICollection<Bill> Bills { get; set; }
@@ -40,6 +42,7 @@ namespace Web.Model
             this.CreatedTime = DateTime.Now;
             this.UpdatedTime = DateTime.Now;
             this.Bills = new HashSet<Bill>();
+            this.Active = true;
         }
 
     }

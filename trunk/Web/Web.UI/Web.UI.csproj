@@ -213,9 +213,13 @@
     <Content Include="App_Themes\Theme1\vendors\jquery\src\wrap.js" />
     <Content Include="Flower\DetailFlower.aspx" />
     <Content Include="Flower\UpdateFlower.aspx" />
+    <Content Include="Positions\Delete.aspx" />
+    <Content Include="Positions\ListPosition.aspx" />
+    <Content Include="Positions\UpdatePosition.aspx" />
     <Content Include="Staff\DeleteStaff.aspx" />
     <Content Include="Flower\DeleteFlower.aspx" />
     <Content Include="Flower\ListFlower.aspx" />
+    <Content Include="Staff\DetailStaff.aspx" />
     <Content Include="Staff\ListStaff.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
@@ -406,6 +410,27 @@
     <Compile Include="Flower\UpdateFlower.aspx.designer.cs">
       <DependentUpon>UpdateFlower.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Positions\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Positions\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Positions\ListPosition.aspx.cs">
+      <DependentUpon>ListPosition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Positions\ListPosition.aspx.designer.cs">
+      <DependentUpon>ListPosition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Positions\UpdatePosition.aspx.cs">
+      <DependentUpon>UpdatePosition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Positions\UpdatePosition.aspx.designer.cs">
+      <DependentUpon>UpdatePosition.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Staff\DeleteStaff.aspx.cs">
       <DependentUpon>DeleteStaff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -429,6 +454,13 @@
     </Compile>
     <Compile Include="Flower\ListFlower.aspx.designer.cs">
       <DependentUpon>ListFlower.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\DetailStaff.aspx.cs">
+      <DependentUpon>DetailStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\DetailStaff.aspx.designer.cs">
+      <DependentUpon>DetailStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="Staff\ListStaff.aspx.cs">
       <DependentUpon>ListStaff.aspx</DependentUpon>

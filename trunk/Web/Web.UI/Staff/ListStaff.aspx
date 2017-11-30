@@ -25,6 +25,7 @@
                    <Columns>
                       <asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>
+                            <a href="DetailStaff.aspx?ID=<%#Eval("ID")%>" class="fa fa-eye btn btn-success"></a>
                             <a href="UpdateStaff.aspx?ID=<%#Eval("ID")%>" class="fa fa-pencil btn btn-info"></a>
                             <button class="fa fa-trash btn btn-danger" type="button" onclick="confirmToDelete(<%#Eval("ID")%>)"></button>
                         </ItemTemplate>

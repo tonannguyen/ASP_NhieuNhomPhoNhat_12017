@@ -34,7 +34,7 @@ namespace Web.UI
                         "st.CreatedTime AS 'Created Time'",
                         "st.UpdatedTime AS 'Updated Time'",
                     };
-                    string query = "select " + String.Join(",", selectedCol) + " from Employees st INNER JOIN Positions pos ON st.PositionID = pos.ID";
+                    string query = "select " + String.Join(",", selectedCol) + " from Employees st INNER JOIN Positions pos ON st.PositionID = pos.ID where st.Active = 1";
                     SqlCommand cmd = new SqlCommand(query, con);
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 

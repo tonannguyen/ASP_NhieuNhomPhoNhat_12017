@@ -19,6 +19,8 @@ namespace Web.Model
         public float QuantityOfYear { get; set; }
         public DateTime CreatedTime { get; set; }
         public DateTime UpdatedTime { get; set; }
+        public bool Active { get; set; }
+
 
         public Revenue()
         {
@@ -30,6 +32,7 @@ namespace Web.Model
             this.QuantityOfYear = 0;
             this.CreatedTime = DateTime.Now;
             this.UpdatedTime = DateTime.Now;
+            this.Active = true;
         }
     }
 }

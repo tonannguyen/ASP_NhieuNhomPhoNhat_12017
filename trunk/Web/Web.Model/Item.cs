@@ -16,6 +16,8 @@ namespace Web.Model
         public float Quantity { get; set; }
         public DateTime CreatedTime { get; set; }
         public DateTime UpdatedTime { get; set; }
+        public bool Active { get; set; }
+
 
         //mapping
         public virtual Bill Bill { get; set; }
@@ -27,6 +29,8 @@ namespace Web.Model
             this.Quantity = 0;
             this.CreatedTime = DateTime.Now;
             this.UpdatedTime = DateTime.Now;
+            this.Active = true;
+
             
            
         }

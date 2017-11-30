@@ -33,7 +33,7 @@ namespace Web.UI
                         "fl.CreatedTime AS 'Created Time'",
                         "fl.UpdatedTime AS 'Updated Time'",
                     };
-                    string query = "select " + String.Join(",", selectedCol) + " from Flowers fl INNER JOIN Types tp ON fl.TypeID = tp.ID";
+                    string query = "select " + String.Join(",", selectedCol) + " from Flowers fl INNER JOIN Types tp ON fl.TypeID = tp.ID where fl.Active = 1";
                     SqlCommand cmd = new SqlCommand(query, con);
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 

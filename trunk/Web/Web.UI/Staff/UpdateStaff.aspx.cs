@@ -42,7 +42,7 @@ namespace Web.UI.Staff
 
                     if (item != null)
                     {
-                        item.Name = "1111";
+                       
                         // set data
                         txtName.Text = item.Name;
                         txtPass.Text = item.Password;
@@ -149,6 +149,16 @@ namespace Web.UI.Staff
                     Response.Redirect("~/Staff/ListStaff.aspx");
                 }
             }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtName.Text = "";
+            txtAdress.Text = "";
+            txtPass.Text = "";
+            txtPhone.Text = "";
+            txtSalary.Text = "";
+            PositionList.SelectedIndex = 0;
         }
 
         private DataTable GetPosition()

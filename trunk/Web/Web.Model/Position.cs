@@ -14,6 +14,8 @@ namespace Web.Model
         public string Value { get; set; }
         public DateTime CreatedTime { get; set; }
         public DateTime UpdatedTime { get; set; }
+        public bool Active { get; set; }
+
 
         //mapping
         public virtual ICollection<Employee> Employee { get; set; }
@@ -23,6 +25,8 @@ namespace Web.Model
             this.Value = "";
             this.CreatedTime = DateTime.Now;
             this.UpdatedTime = DateTime.Now;
+            this.Active = true;
+
         }
     }
 }

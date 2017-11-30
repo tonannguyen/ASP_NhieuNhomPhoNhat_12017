@@ -18,6 +18,9 @@ namespace Web.Model
         public DateTime CreatedTime { get; set; }
         public DateTime UpdatedTime { get; set; }
 
+        public bool Active { get; set; }
+
+
         //mapping
         public virtual Employee Employee { get; set; }
         public virtual ICollection<Item> Items { get; set; }
@@ -31,6 +34,7 @@ namespace Web.Model
             this.Items = new HashSet<Item>();
             this.CreatedTime = DateTime.Now;
             this.UpdatedTime = DateTime.Now;
+            this.Active = true;
         }
 
     }

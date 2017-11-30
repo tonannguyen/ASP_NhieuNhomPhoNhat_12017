@@ -25,36 +25,38 @@ namespace Web.UI.Staff
             {
                 Response.Redirect("~/Login.aspx");
             }
-
-            // get data source
-            PositionList.DataSource = GetPosition();
+            if (!Page.IsPostBack)
+            {
+                // get data source
+                PositionList.DataSource = GetPosition();
             PositionList.DataValueField = "ID";
             PositionList.DataTextField = "Value";
             PositionList.DataBind();
 
-            if (Request.QueryString["ID"] != null && string.IsNullOrEmpty(Request.QueryString["ID"].ToString()) == false && Request.HttpMethod == "GET")
-            {
-                // get data
-                using (MasterDbContext db = new MasterDbContext())
+                if (Request.QueryString["ID"] != null && string.IsNullOrEmpty(Request.QueryString["ID"].ToString()) == false && Request.HttpMethod == "GET")
                 {
-                    var id = Convert.ToInt32(Request.QueryString["ID"].ToString());
-                    var item = db.Employees.Find(id);
-
-                    if (item != null)
+                    // get data
+                    using (MasterDbContext db = new MasterDbContext())
                     {
-                       
-                        // set data
-                        txtName.Text = item.Name;
-                        txtPass.Text = item.Password;
-                        txtPhone.Text = item.Phone;
-                        txtAdress.Text = item.Adress;
+                        var id = Convert.ToInt32(Request.QueryString["ID"].ToString());
+                        var item = db.Employees.Find(id);
 
-                        PositionList.SelectedIndex = PositionList.Items.IndexOf(PositionList.Items.FindByText(item.PositionID.ToString()));
-                        txtSalary.Text = item.Salary.ToString();
-                    }
-                    else
-                    {
-                        Response.Redirect("~/ListStaff.aspx");
+                        if (item != null)
+                        {
+
+                            // set data
+                            txtName.Text = item.Name;
+                            txtPass.Text = item.Password;
+                            txtPhone.Text = item.Phone;
+                            txtAdress.Text = item.Adress;
+
+                            PositionList.SelectedIndex = PositionList.Items.IndexOf(PositionList.Items.FindByText(item.PositionID.ToString()));
+                            txtSalary.Text = item.Salary.ToString();
+                        }
+                        else
+                        {
+                            Response.Redirect("~/ListStaff.aspx");
+                        }
                     }
                 }
             }
@@ -72,6 +74,12 @@ namespace Web.UI.Staff
 
                     if (item != null)
                     {
+                        if (txtPass.Text != txtRePass.Text)
+                        {
+                            Response.Redirect("~/Staff/UpdateStaff.aspx");
+                            return;
+                        }
+
                         // set data
                         item.Name = txtName.Text;
                         item.Password = txtPass.Text;
@@ -111,6 +119,12 @@ namespace Web.UI.Staff
                 }
                 else
                 {
+                    if (txtPass.Text != txtRePass.Text)
+                    {
+                        Response.Redirect("~/Staff/UpdateStaff.aspx");
+                        return;
+                    }
+
 
                     var staff = new Employee();
                     staff.Name = txtName.Text;

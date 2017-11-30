@@ -27,36 +27,41 @@ namespace Web.UI
                 Response.Redirect("~/Login.aspx");
             }
 
-            // get data source
-            typeList.DataSource = GetType();
-            typeList.DataValueField = "ID";
-            typeList.DataTextField = "Name";
-            typeList.DataBind();
-
-            // kiem tra neu co GET ID thi load data va set data
-            if (Request.QueryString["ID"] != null && string.IsNullOrEmpty(Request.QueryString["ID"].ToString()) == false && Request.HttpMethod == "GET")
+            if (!Page.IsPostBack)
             {
-                // get data
-                using (MasterDbContext db = new MasterDbContext())
-                {
-                    var id = Convert.ToInt32(Request.QueryString["ID"].ToString());
-                    var item = db.Flowers.Find(id);
+                // get data source
+                typeList.DataSource = GetType();
+                typeList.DataValueField = "ID";
+                typeList.DataTextField = "Name";
+                typeList.DataBind();
 
-                    if (item != null)
+                // kiem tra neu co GET ID thi load data va set data
+                if (Request.QueryString["ID"] != null && string.IsNullOrEmpty(Request.QueryString["ID"].ToString()) == false && Request.HttpMethod == "GET")
+                {
+                    // get data
+                    using (MasterDbContext db = new MasterDbContext())
                     {
-                        // set data
-                        txtName.Text = item.Name;
-                        txtPrice.Text = item.Price.ToString();
-                        txtQuantity.Text = item.Quantity.ToString();
-                        typeList.SelectedIndex = typeList.Items.IndexOf(typeList.Items.FindByText(item.TypeID.ToString()));
-                        description.InnerText = item.Description;
-                    }
-                    else
-                    {
-                        Response.Redirect("~/ListFlower.aspx");
+                        var id = Convert.ToInt32(Request.QueryString["ID"].ToString());
+                        var item = db.Flowers.Find(id);
+
+                        if (item != null)
+                        {
+                            // set data
+                            txtName.Text = item.Name;
+                            txtPrice.Text = item.Price.ToString();
+                            txtQuantity.Text = item.Quantity.ToString();
+                            typeList.SelectedIndex = typeList.Items.IndexOf(typeList.Items.FindByText(item.TypeID.ToString()));
+                            description.InnerText = item.Description;
+                        }
+                        else
+                        {
+                            Response.Redirect("~/ListFlower.aspx");
+                        }
                     }
                 }
             }
+
+            
         }
 
         protected void btnSaveClick(object sender, EventArgs e)

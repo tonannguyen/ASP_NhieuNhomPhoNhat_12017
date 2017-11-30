@@ -23,6 +23,7 @@ namespace Web.Model.Migrations
                 var pos = new Position();
                 pos.Value = "Admin";
                 context.Positions.Add(pos);
+                context.SaveChanges();
             }
 
             if(context.Employees.Any() == false)
@@ -35,7 +36,9 @@ namespace Web.Model.Migrations
                 staff.PositionID = 1;
                 staff.Salary = 1;
                 staff.Bonus = 1;
+                staff.Active = true;
                 context.Employees.Add(staff);
+                context.SaveChanges();
             }
 
            /* if (context.Flowers.Any() == false)

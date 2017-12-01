@@ -213,6 +213,7 @@
     <Content Include="App_Themes\Theme1\vendors\jquery\src\wrap.js" />
     <Content Include="Flower\DetailFlower.aspx" />
     <Content Include="Flower\UpdateFlower.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="Positions\Delete.aspx" />
     <Content Include="Positions\ListPosition.aspx" />
     <Content Include="Positions\UpdatePosition.aspx" />
@@ -410,6 +411,13 @@
     <Compile Include="Flower\UpdateFlower.aspx.designer.cs">
       <DependentUpon>UpdateFlower.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Positions\Delete.aspx.cs">
       <DependentUpon>Delete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -529,7 +537,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Uploads\Flowers\" />
     <Folder Include="Uploads\Staff\" />
   </ItemGroup>

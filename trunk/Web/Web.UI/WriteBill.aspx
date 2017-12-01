@@ -8,7 +8,6 @@
               <div class="title_left">
                 <h3>Nhập hóa đơn bán hàng</h3>
               </div>
-            </div>
 
             <div class="clearfix"></div>
 

@@ -29,7 +29,17 @@ namespace Web.UI
 
             if (output == "1")
             {
-                Session["logined"] = txtUserName.Text;
+                string query1 = "select ID from Employees where Name='" + txtUserName.Text + "'";
+                SqlCommand cmd1 = new SqlCommand(query1, con);
+                using (SqlDataReader dr = cmd1.ExecuteReader())
+                {
+                    bool success = dr.Read();
+                    if (success)
+                    {
+                        Session["logined"] = dr.GetValue(0).ToString();
+                    }
+                }
+               
                 Response.Redirect("~/Default.aspx");
             }
             else

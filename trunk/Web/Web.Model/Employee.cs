@@ -14,13 +14,11 @@ namespace Web.Model
         public int ID { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
-
         public string Phone { get; set; }
         public string Adress { get; set; }
         public string Avata { get; set; }
         public int PositionID { get; set; }
         public decimal Salary { get; set; }
-        public decimal Bonus { get; set; }
         public DateTime CreatedTime { get; set; }
         public DateTime UpdatedTime { get; set; }
         public bool Active { get; set; }
@@ -38,7 +36,6 @@ namespace Web.Model
             this.Avata = "";
             this.PositionID = 1;
             this.Salary = 0;
-            this.Bonus = 0;
             this.CreatedTime = DateTime.Now;
             this.UpdatedTime = DateTime.Now;
             this.Bills = new HashSet<Bill>();

@@ -35,7 +35,6 @@ namespace Web.Model.Migrations
                 staff.Phone = "123456";
                 staff.PositionID = 1;
                 staff.Salary = 1;
-                staff.Bonus = 1;
                 staff.Active = true;
                 context.Employees.Add(staff);
                 context.SaveChanges();

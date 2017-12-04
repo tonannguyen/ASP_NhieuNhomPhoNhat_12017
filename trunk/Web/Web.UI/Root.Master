@@ -54,7 +54,7 @@
                 <ul class="nav side-menu">
 
                       <li><a href="/Default.aspx">Home</a></li>
-                      <li><a href="/WriteBill.aspx">Bills</a></li>
+                      <li><a href="/Bill/WriteBill.aspx">Bills</a></li>
                       <li><a href="/Type/List.aspx">Types</a></li>
                     <li><a href="/Positions/ListPosition.aspx">Positions</a></li>
                       <li><a href="/Flower/ListFlower.aspx">Flowers</a></li>

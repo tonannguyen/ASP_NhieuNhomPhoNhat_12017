@@ -211,6 +211,7 @@
     <Content Include="App_Themes\Theme1\vendors\jquery\src\var\support.js" />
     <Content Include="App_Themes\Theme1\vendors\jquery\src\var\toString.js" />
     <Content Include="App_Themes\Theme1\vendors\jquery\src\wrap.js" />
+    <Content Include="Bill\WriteBill.aspx" />
     <Content Include="Flower\DetailFlower.aspx" />
     <Content Include="Flower\UpdateFlower.aspx" />
     <Content Include="Logout.aspx" />
@@ -371,7 +372,6 @@
     <Content Include="Type\Delete.aspx" />
     <Content Include="Type\List.aspx" />
     <Content Include="Type\UpdateType.aspx" />
-    <Content Include="WriteBill.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -390,6 +390,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\Common.cs" />
+    <Compile Include="Bill\WriteBill.aspx.cs">
+      <DependentUpon>WriteBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bill\WriteBill.aspx.designer.cs">
+      <DependentUpon>WriteBill.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -526,13 +533,6 @@
     </Compile>
     <Compile Include="Type\UpdateType.aspx.designer.cs">
       <DependentUpon>UpdateType.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WriteBill.aspx.cs">
-      <DependentUpon>WriteBill.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WriteBill.aspx.designer.cs">
-      <DependentUpon>WriteBill.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -21,17 +21,36 @@ namespace Web.UI.Staff
         };
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["logined"] == null)
+            //set role
+            using (MasterDbContext db = new MasterDbContext())
             {
-                Response.Redirect("~/Login.aspx");
+                //find current user
+                int idUser = Convert.ToInt32(Session["logined"].ToString()); ;
+                var user = db.Employees.Find(idUser);
+                //find role 
+                var role = db.Positions.Find((int)user.PositionID);
+
+                // check session
+                if (Session["logined"] != null )
+                {
+                    // check role ?= Admin
+                    if(role.Value != "Admin")
+                        Response.Redirect("~/Staff/ListStaff.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+
             }
+            
             if (!Page.IsPostBack)
             {
                 // get data source
                 PositionList.DataSource = GetPosition();
-            PositionList.DataValueField = "ID";
-            PositionList.DataTextField = "Value";
-            PositionList.DataBind();
+                PositionList.DataValueField = "ID";
+                PositionList.DataTextField = "Value";
+                PositionList.DataBind();
 
                 if (Request.QueryString["ID"] != null && string.IsNullOrEmpty(Request.QueryString["ID"].ToString()) == false && Request.HttpMethod == "GET")
                 {

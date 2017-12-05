@@ -6,7 +6,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Nhập hóa đơn bán hàng</h3>
+                <h3>Write Bill</h3>
               </div>
             </div>
 
@@ -17,16 +17,16 @@
                 <div class="x_panel">
                   <div class="x_content">
                       <form id="Form1" runat="server">
-                    <table id="" class="table table-striped table-bordered">
+                    <table id="write" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>Họ tên nhân viên bán hàng</th>
-                          <th>Thao tác</th>
-                          <th>Loại hoa</th>
-                          <th>Tên hoa</th>
-                          <th>Số lượng</th>
-                          <th>Đơn giá</th>
-                          <th>Tổng tiền</th>
+                          <th>Staff Name</th>
+                          <th>Transaction Type</th>
+                          <th>Flower Type</th>
+                          <th>Flower Name</th>
+                          <th>Quantity</th>
+                          <th>Price</th>
+                          <th>Total Price</th>
                         </tr>
                       </thead>
                         <tr>
@@ -35,16 +35,16 @@
                           </td>
                           <td>
                             <select>
-                              <option value="0">Bán hàng</option>
-                              <option value="1">Nhập hàng</option>
+                              <option value="0">Sale</option>
+                              <option value="1">Buy</option>
                             </select>
                           </td>
 
                           <td>
-                              <asp:DropDownList ID="typeList" runat="server" OnSelectedIndexChanged ="typeList_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                              <asp:DropDownList ID="typeList" runat="server" OnSelectedIndexChanged ="typeList_SelectedIndexChanged" AutoPostBack="true" ></asp:DropDownList>
                           </td>
                           <td>
-                              <asp:DropDownList ID="flowerList" runat="server" AutoPostBack="true" OnSelectedIndexChanged="flowerList_SelectedIndexChanged"></asp:DropDownList>
+                              <asp:DropDownList ID="flowerList" runat="server" AutoPostBack="true" OnSelectedIndexChanged="flowerList_SelectedIndexChanged" ></asp:DropDownList>
                           </td>
                           <td>
                               <asp:TextBox ID="quantity" runat="server" AutoPostBack="true" OnTextChanged="quantity_TextChanged"></asp:TextBox>
@@ -56,8 +56,8 @@
                           </td>
                         </tr>
                     </table>
-                    <button class="pull-right">Nhập Hóa Đơn</button>
-                          </form>
+                    <asp:Button ID="writebill" class="pull-right" runat="server" Text="Write Bill" OnClick="writeBill"/>
+                         
                   </div>
                 </div>
               </div>
@@ -68,7 +68,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Hóa đơn</h2>
+                    <h2>Bill</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -87,54 +87,47 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-
-                    <table class="table">
+					                      <table id="saveBill" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>Họ tên nhân viên bán hàng</th>
-                          <th>Thao tác</th>
-                          <th>Loại hoa</th>
-                          <th>Tên hoa</th>
-                          <th>Số lượng</th>
-                          <th>Đơn giá</th>
-                          <th>Tổng tiền</th>
+                          <th>Staff Name</th>
+                          <th>Transaction Type</th>
+                          <th>Flower Type</th>
+                          <th>Flower Name</th>
+                          <th>Quantity</th>
+                          <th>Price</th>
+                          <th>Total Price</th>
                         </tr>
                       </thead>
-                      <tbody>
                         <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                      </tbody>
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Tổng số</th>
-                          <th>1000000</th>
-                          <th>100%</th>
-                        </tr>
-                      </thead>
+                          <td>
+							  <asp:Label ID="staff" runat="server" Text=""></asp:Label>
+                          </td>
+                          <td>
+							  <asp:Label ID="transaction" runat="server" Text=""></asp:Label>
+                          </td>
 
+                          <td>
+                              <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                          </td>
+                          <td>
+                              <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                          </td>
+                          <td>
+                              <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
+                          <td>
+                             <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
+                          </td>
+                          <td>
+                            <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
+                          </td>
+                        </tr>
                     </table>
-                    <button class="pull-right">Lưu Hóa Đơn</button>
+					  <asp:Button ID="saveBill" class="pull-right" runat="server" Text="Save Bill" />
                   </div>
                 </div>
               </div>
-
+				 </form>
               <div class="clearfix"></div>
           </div>
         </div>

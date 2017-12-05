@@ -30,7 +30,6 @@ namespace Web.UI
                         "st.Adress AS 'Adress'",
                         "pos.Value AS 'Position'",
                         "st.Salary AS 'Salary'",
-                        "st.Bonus AS 'Bonus'",
                         "st.CreatedTime AS 'Created Time'",
                         "st.UpdatedTime AS 'Updated Time'",
                     };

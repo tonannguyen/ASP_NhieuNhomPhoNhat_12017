@@ -11,7 +11,6 @@ namespace Web.Model
     {
         [Key]
         public int ID { get; set; }
-        public int StaffID { get; set; }
         public int Type { get; set; }
         public float Quantity { get; set; }
         public decimal Price { get; set; }
@@ -27,7 +26,6 @@ namespace Web.Model
 
         public Bill()
         {
-            this.StaffID = 1;
             this.Type = 0;
             this.Quantity = 0;
             this.Price = 0;

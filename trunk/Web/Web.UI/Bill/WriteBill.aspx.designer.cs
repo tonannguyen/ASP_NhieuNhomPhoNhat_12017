@@ -31,6 +31,33 @@ namespace Web.UI {
         protected global::System.Web.UI.WebControls.DropDownList staffList;
         
         /// <summary>
+        /// billID_hint control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField billID_hint;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// transaction_type control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList transaction_type;
+        
+        /// <summary>
         /// typeList control.
         /// </summary>
         /// <remarks>
@@ -76,76 +103,94 @@ namespace Web.UI {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl totalPrice;
         
         /// <summary>
-        /// writebill control.
+        /// btn_writeBill control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button writebill;
+        protected global::System.Web.UI.WebControls.Button btn_writeBill;
         
         /// <summary>
-        /// staff control.
+        /// tb_unchange control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label staff;
+        protected global::System.Web.UI.WebControls.Table tb_unchange;
         
         /// <summary>
-        /// transaction control.
+        /// lb_staff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label transaction;
+        protected global::System.Web.UI.WebControls.TableCell lb_staff;
         
         /// <summary>
-        /// Label1 control.
+        /// lb_transaction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.TableCell lb_transaction;
         
         /// <summary>
-        /// Label2 control.
+        /// tb_change control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Table tb_change;
         
         /// <summary>
-        /// Label3 control.
+        /// lb_fl_Type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.TableCell lb_fl_Type;
         
         /// <summary>
-        /// Label4 control.
+        /// lb_fl_Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.TableCell lb_fl_Name;
         
         /// <summary>
-        /// Label5 control.
+        /// lb_quantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.TableCell lb_quantity;
+        
+        /// <summary>
+        /// lb_Price control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell lb_Price;
+        
+        /// <summary>
+        /// lb_TotalPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell lb_TotalPrice;
         
         /// <summary>
         /// saveBill control.

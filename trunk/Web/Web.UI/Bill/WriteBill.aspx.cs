@@ -11,10 +11,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Web.Model;
 
+
 namespace Web.UI
 {
     public partial class WriteBill : System.Web.UI.Page
     {
+		List<ClassWriteBill> listData;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["logined"] != null)
@@ -23,7 +25,8 @@ namespace Web.UI
 
 				if (!IsPostBack)
                 {
-                    staffList.DataSource = GetStaff();
+					listData = new List<ClassWriteBill>();
+					staffList.DataSource = GetStaff();
                     staffList.DataValueField = "ID";
                     staffList.DataTextField = "Name";
                     staffList.DataBind();
@@ -133,8 +136,39 @@ namespace Web.UI
 
             return result;
         }
+		private Double GetBillID(string createTime)
+		{
 
-        private DataTable GetType()
+			double result = 0;
+			SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MasterDbContext"].ToString());
+			try
+			{
+				con.Open();
+				string query = "select ID from Bills where Active = 1 AND CreatedTime = '"+ createTime + "'";
+				SqlCommand cmd = new SqlCommand(query, con);
+				using (SqlDataReader dr = cmd.ExecuteReader())
+				{
+					bool success = dr.Read();
+					if (success)
+					{
+						result = Convert.ToDouble(dr.GetValue(0));
+					}
+				}
+
+			}
+			catch
+			{
+
+			}
+			finally
+			{
+				con.Close();
+			}
+
+			return result;
+		}
+
+		private DataTable GetType()
         {
 
             DataTable data = new DataTable();
@@ -164,7 +198,8 @@ namespace Web.UI
 
 
 
-        protected void typeList_SelectedIndexChanged(object sender, EventArgs e)
+
+		protected void typeList_SelectedIndexChanged(object sender, EventArgs e)
         {
             flowerList.DataSource = GetFlower(Convert.ToDouble(typeList.Text));
             flowerList.DataValueField = "ID";
@@ -193,12 +228,83 @@ namespace Web.UI
 
 		protected void writeBill(object sender, EventArgs e)
 		{
-			
-		}
-		protected void saveBill(object sender, EventArgs e)
-		{
+
+			if (lb_staff.Text == "")
+			{
+				lb_staff.Text = staffList.SelectedItem.ToString();
+				lb_transaction.Text = transaction_type.SelectedItem.ToString();
+				lb_fl_Type.Text = typeList.SelectedItem.ToString();
+				lb_fl_Name.Text = flowerList.SelectedItem.ToString();
+				lb_quantity.Text = quantity.Text;
+				lb_Price.Text = price.InnerText;
+				lb_TotalPrice.Text = totalPrice.InnerText;
+				using (MasterDbContext db = new MasterDbContext())
+				{
+					var bill = new Bill();
+					string timeCreate = bill.saveBill(Convert.ToInt32(staffList.SelectedValue),Convert.ToInt32(transaction_type.SelectedValue));
+					db.Bills.Add(bill);
+					db.SaveChanges();
+					double billId = GetBillID(timeCreate);
+					billID_hint.Value = billId.ToString();
+
+				}
+			}
+			else
+			{
+				using (MasterDbContext db = new MasterDbContext())
+				{
+					int id_bill = Convert.ToInt32(billID_hint.Value);
+					var item = new Item();
+					item.BillID = id_bill;
+					item.Quantity = Convert.ToInt32(quantity.Text);
+					item.FlowerID = Convert.ToInt32(flowerList.SelectedValue);
+					db.Items.Add(item);
+					db.SaveChanges();
+				}
+
+			}
+
+
 
 		}
+
 
 	}
 }
+
+
+//ClassWriteBill cellData = new ClassWriteBill(
+//	typeList.SelectedItem.ToString(),
+//	flowerList.SelectedItem.ToString(),
+//	quantity.Text,
+//	price.InnerText,
+//	totalPrice.InnerText
+//	);
+//ClassWriteBill cellData2 = new ClassWriteBill();
+//listData.Add(cellData2);
+
+
+//				for (int i = 1; i <= listData.Count; i++)
+//				{
+//					// Create new row and add it to the table.
+//					TableRow tRow = new TableRow();
+//tb_change.Rows.Add(tRow);
+//						TableCell type_cell = new TableCell();
+//TableCell name_cell = new TableCell();
+//TableCell quantity_cell = new TableCell();
+//TableCell price_cell = new TableCell();
+//TableCell total_price_cell = new TableCell();
+//listData.ForEach(x => {
+//						name_cell.Text = x.name;
+//						type_cell.Text = x.type;
+//						quantity_cell.Text = x.quantity;
+//						price_cell.Text = x.price;
+//						total_price_cell.Text = x.totalPrice;
+//					});
+//						tRow.Cells.Add(type_cell);
+//						tRow.Cells.Add(name_cell);
+//						tRow.Cells.Add(quantity_cell);
+//						tRow.Cells.Add(price_cell);
+//						tRow.Cells.Add(total_price_cell);
+					
+//				}

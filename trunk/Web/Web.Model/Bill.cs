@@ -15,8 +15,8 @@ namespace Web.Model
         public int Type { get; set; }
         public float Quantity { get; set; }
         public decimal Price { get; set; }
-        public DateTime CreatedTime { get; set; }
-        public DateTime UpdatedTime { get; set; }
+        public string CreatedTime { get; set; }
+        public string UpdatedTime { get; set; }
 
         public bool Active { get; set; }
 
@@ -27,14 +27,26 @@ namespace Web.Model
 
         public Bill()
         {
-            this.Type = 0;
-            this.Quantity = 0;
-            this.Price = 0;
-            this.Items = new HashSet<Item>();
-            this.CreatedTime = DateTime.Now;
-            this.UpdatedTime = DateTime.Now;
+			this.EmployeeID = 0;
+			this.Type = 0;
+			this.Quantity = 0;
+			this.Price = 0;
+			this.Items = new HashSet<Item>();
+            this.CreatedTime = DateTime.Now.ToString();
+            this.UpdatedTime = DateTime.Now.ToString();
             this.Active = true;
         }
+		public string saveBill(int employeeID, int type)
+		{
+			this.EmployeeID = employeeID;
+			this.Quantity = 0;
+			this.Price = 0;
+			this.Type = type;
+			this.CreatedTime = DateTime.Now.ToString();
+			this.UpdatedTime = DateTime.Now.ToString();
+			this.Active = true;
+			return this.CreatedTime;
+		}
 
-    }
+	}
 }

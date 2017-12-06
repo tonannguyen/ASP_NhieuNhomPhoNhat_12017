@@ -17,7 +17,7 @@
                 <div class="x_panel">
                   <div class="x_content">
                       <form id="Form1" runat="server">
-                    <table id="write" class="table table-striped table-bordered">
+                    <table id="tble_write" class="table table-striped table-bordered">
                       <thead>
                         <tr>
                           <th>Staff Name</th>
@@ -32,12 +32,18 @@
                         <tr>
                           <td>
                             <asp:DropDownList ID="staffList" runat="server"></asp:DropDownList>
+							  <asp:HiddenField ID="billID_hint" runat="server" Value=""/>
+							  <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                           </td>
                           <td>
-                            <select>
-                              <option value="0">Sale</option>
-                              <option value="1">Buy</option>
-                            </select>
+							<asp:DropDownList ID="transaction_type" runat="server">
+								<asp:ListItem Value="0">
+									Buy
+								</asp:ListItem>
+								<asp:ListItem Value="1">
+									Sale
+								</asp:ListItem>
+							</asp:DropDownList>
                           </td>
 
                           <td>
@@ -56,10 +62,11 @@
                           </td>
                         </tr>
                     </table>
-                    <asp:Button ID="writebill" class="pull-right" runat="server" Text="Write Bill" OnClick="writeBill"/>
+
                          
                   </div>
                 </div>
+				                      <asp:Button ID="btn_writeBill" class="pull-right" runat="server" Text="Write Bill" OnClick="writeBill"/>
               </div>
             </div>
             <div class="clearfix"></div>
@@ -87,46 +94,39 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-					                      <table id="saveBill" class="table table-striped table-bordered">
-                      <thead>
-                        <tr>
-                          <th>Staff Name</th>
-                          <th>Transaction Type</th>
-                          <th>Flower Type</th>
-                          <th>Flower Name</th>
-                          <th>Quantity</th>
-                          <th>Price</th>
-                          <th>Total Price</th>
-                        </tr>
-                      </thead>
-                        <tr>
-                          <td>
-							  <asp:Label ID="staff" runat="server" Text=""></asp:Label>
-                          </td>
-                          <td>
-							  <asp:Label ID="transaction" runat="server" Text=""></asp:Label>
-                          </td>
-
-                          <td>
-                              <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-                          </td>
-                          <td>
-                              <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
-                          </td>
-                          <td>
-                              <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
-                          <td>
-                             <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
-                          </td>
-                          <td>
-                            <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
-                          </td>
-                        </tr>
-                    </table>
-					  <asp:Button ID="saveBill" class="pull-right" runat="server" Text="Save Bill" />
+					  <div class ="col-md-4">
+					<asp:Table ID="tb_unchange" runat="server" class="table table-striped table-bordered">
+									  <asp:TableHeaderRow>
+										  <asp:TableHeaderCell Text="Flower Type"></asp:TableHeaderCell>
+										  <asp:TableHeaderCell Text="Flower Name"></asp:TableHeaderCell>
+									  </asp:TableHeaderRow>
+									  <asp:TableRow>
+										  <asp:TableCell id="lb_staff"></asp:TableCell>
+										  <asp:TableCell id="lb_transaction"></asp:TableCell>
+									  </asp:TableRow>
+							  </asp:Table>
+						  </div>
+					  <div class="col-md-8">
+						  		<asp:Table ID="tb_change" runat="server" class="table table-striped table-bordered">
+									  <asp:TableHeaderRow>
+										  <asp:TableHeaderCell Text="Flower Type"></asp:TableHeaderCell>
+										  <asp:TableHeaderCell Text="Flower Name"></asp:TableHeaderCell>
+										  <asp:TableHeaderCell Text="Quantity"></asp:TableHeaderCell>
+										  <asp:TableHeaderCell Text="Price"></asp:TableHeaderCell>
+										  <asp:TableHeaderCell Text="Total Price"></asp:TableHeaderCell>
+									  </asp:TableHeaderRow>
+									  <asp:TableRow>
+										  <asp:TableCell id="lb_fl_Type"></asp:TableCell>
+										  <asp:TableCell id="lb_fl_Name"></asp:TableCell>
+										  <asp:TableCell id="lb_quantity"></asp:TableCell>
+										  <asp:TableCell id="lb_Price"></asp:TableCell>
+										  <asp:TableCell id="lb_TotalPrice"></asp:TableCell>
+									  </asp:TableRow>
+							  </asp:Table>
                   </div>
                 </div>
               </div>
+				   <asp:Button ID="saveBill" class="pull-right" runat="server" Text="Save Bill" />
 				 </form>
               <div class="clearfix"></div>
           </div>

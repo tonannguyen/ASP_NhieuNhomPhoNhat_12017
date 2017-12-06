@@ -25,14 +25,9 @@ namespace Web.Model
 
         public Item()
         {
-            this.BillID = 1;
-            this.Quantity = 0;
             this.CreatedTime = DateTime.Now;
             this.UpdatedTime = DateTime.Now;
             this.Active = true;
-
-            
-           
         }
 
     }

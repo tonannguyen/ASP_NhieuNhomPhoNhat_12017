@@ -11,6 +11,7 @@ namespace Web.Model
     {
         [Key]
         public int ID { get; set; }
+        public int EmployeeID { get; set; }
         public int Type { get; set; }
         public float Quantity { get; set; }
         public decimal Price { get; set; }

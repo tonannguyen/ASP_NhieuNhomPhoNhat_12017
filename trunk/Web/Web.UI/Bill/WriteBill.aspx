@@ -97,8 +97,8 @@
 					  <div class ="col-md-4">
 					<asp:Table ID="tb_unchange" runat="server" class="table table-striped table-bordered">
 									  <asp:TableHeaderRow>
-										  <asp:TableHeaderCell Text="Flower Type"></asp:TableHeaderCell>
-										  <asp:TableHeaderCell Text="Flower Name"></asp:TableHeaderCell>
+										  <asp:TableHeaderCell Text="Staff Name"></asp:TableHeaderCell>
+										  <asp:TableHeaderCell Text="Transaction Type"></asp:TableHeaderCell>
 									  </asp:TableHeaderRow>
 									  <asp:TableRow>
 										  <asp:TableCell id="lb_staff"></asp:TableCell>
@@ -107,7 +107,8 @@
 							  </asp:Table>
 						  </div>
 					  <div class="col-md-8">
-						  		<asp:Table ID="tb_change" runat="server" class="table table-striped table-bordered">
+                          <asp:GridView ID="gv_change" runat="server" class="table table-striped table-bordered"></asp:GridView>
+<%--						  		<asp:Table ID="tb_change" runat="server" class="table table-striped table-bordered">
 									  <asp:TableHeaderRow>
 										  <asp:TableHeaderCell Text="Flower Type"></asp:TableHeaderCell>
 										  <asp:TableHeaderCell Text="Flower Name"></asp:TableHeaderCell>
@@ -122,7 +123,7 @@
 										  <asp:TableCell id="lb_Price"></asp:TableCell>
 										  <asp:TableCell id="lb_TotalPrice"></asp:TableCell>
 									  </asp:TableRow>
-							  </asp:Table>
+							  </asp:Table>--%>
                   </div>
                 </div>
               </div>

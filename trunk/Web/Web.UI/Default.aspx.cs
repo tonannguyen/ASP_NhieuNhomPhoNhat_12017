@@ -27,7 +27,10 @@ namespace Web.UI
                                       " FROM Revenues" +
                                       " WHERE CONVERT(DATE, CreatedTime) >= DATEADD(MONTH, DATEDIFF(MONTH, 31, CURRENT_TIMESTAMP), 0)" +
                                       " AND CONVERT(DATE, CreatedTime) < DATEADD(MONTH, DATEDIFF(MONTH, 0, CURRENT_TIMESTAMP), 0)";
-            string quantityQuarter  = "";
+            string quantityQuarter = "SELECT Sum(QuantityOfQuater)" +
+                                      " FROM Revenues" +
+                                      " datepart(qq,CONVERT(DATE, GETDATE())) - datepart(qq,CONVERT(DATE, CreatedTime)) = 1" +
+                                      " AND YearID = datepart(year,getdate())";
             string quntityYear      = "SELECT Sum(QuantityOfYear) FROM Revenues WHERE CONVERT(DATE, CreatedTime) > DATEADD(year,-1,GETDATE())";
             lblDay.Text = getQuantity(quantityDate);
             lblLastWeek.Text = getQuantity(quantityLastWeek);

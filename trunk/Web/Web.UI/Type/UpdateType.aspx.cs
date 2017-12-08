@@ -58,7 +58,7 @@ namespace Web.UI
                     {
                         // set data
                         item.Name = txtName.Text;
-
+                        item.UpdatedTime = DateTime.Now;
                         // save
                         db.Entry(item).State = EntityState.Modified;
                         db.SaveChanges();

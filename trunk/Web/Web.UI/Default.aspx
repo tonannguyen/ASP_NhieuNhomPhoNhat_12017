@@ -10,28 +10,28 @@
           <div class="row tile_count">
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Doanh thu ngày </span>
-              <div class="count">2,315</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+              <div><asp:Label ID="lblDay" runat="server" Text="123"  style="font-size: 35px;margin-left: 20px;"></asp:Label></div>
+              <span class="green" style="float: right;"> VNĐ</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Doanh thu tuần trước</span>
-              <div class="count">2500</div>
-              <span class="count_bottom"><i class="green">4% </i> From last Week</span>
+              <div><asp:Label ID="lblLastWeek" runat="server" Text="123"   style="font-size: 35px;margin-left: 20px;"></asp:Label></div>
+              <span class="green" style="float: right;"> VNĐ</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-clock-o"></i> Doanh thu tháng trước </span>
-              <div class="count">123.50</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
+              <div><asp:Label ID="lblLastMonth" runat="server" Text="123"   style="font-size: 35px;margin-left: 20px;"></asp:Label></div>
+              <span class="green" style="float: right;"> VNĐ</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Doanh thu quý </span>
-              <div class="count green">2,500</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+              <div><asp:Label ID="lblQuarter" runat="server" Text="123"  style="font-size: 35px;margin-left: 20px;"></asp:Label></div>
+              <span class="green" style="float: right;"> VNĐ</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Doanh thu năm </span>
-              <div class="count">4,567</div>
-              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
+              <div><asp:Label ID="lblYear" runat="server" Text="123"  style="font-size: 35px;margin-left: 20px;"></asp:Label></div>
+              <span class="green" style="float: right;"> VNĐ</span>
             </div>
 
           </div>
@@ -55,7 +55,7 @@
 
                 <div class="col-md-12 col-sm-9 col-xs-12">
                   <div id="chart_plot_01" class="demo-placeholder">
-                  <asp:Button ID="btnLogout" runat="server" Text="Button" OnClick="btnLogout_Click"/>
+                  <asp:Button ID="btnLogout" runat="server" Text="Button" />
                     </div>
                 </div>
                 <div class="clearfix"></div>

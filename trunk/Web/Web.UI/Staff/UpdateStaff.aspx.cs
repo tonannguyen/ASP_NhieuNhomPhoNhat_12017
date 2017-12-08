@@ -106,6 +106,7 @@ namespace Web.UI.Staff
                         item.Adress = txtAdress.Text;
                         item.PositionID = Convert.ToInt32(PositionList.SelectedValue);
                         item.Salary = decimal.Parse(txtSalary.Text);
+                        item.UpdatedTime = DateTime.Now;
                         // upload solving
                         if (avatar.HasFile)
                         {

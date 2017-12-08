@@ -83,7 +83,7 @@ namespace Web.UI
                         item.Quantity = Convert.ToInt32(txtQuantity.Text);
                         item.TypeID = Convert.ToInt32(typeList.SelectedValue);
                         item.Description = description.InnerText;
-
+                        item.UpdatedTime = DateTime.Now;
 
                         // upload solving
                         if (image.HasFile)

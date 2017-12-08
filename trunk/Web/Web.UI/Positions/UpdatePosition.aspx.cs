@@ -56,6 +56,7 @@ namespace Web.UI.Positons
                     {
                         // set data
                         item.Value = txtName.Text;
+                        item.UpdatedTime = DateTime.Now;
 
                         // save
                         db.Entry(item).State = EntityState.Modified;

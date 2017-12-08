@@ -15,13 +15,18 @@ namespace Web.UI
             // get user
             using (MasterDbContext db = new MasterDbContext())
             {
-                var id = Convert.ToInt32(Session["logined"].ToString()); ;
-                var item = db.Employees.Find(id);
-                if (item != null)
+                try
                 {
-                    avt.Attributes["src"] = "/Uploads/Staff/" + item.Avata;
-                    lblName.Text = item.Name;
+                    var id = Convert.ToInt32(Session["logined"].ToString()); ;
+                    var item = db.Employees.Find(id);
+                    if (item != null)
+                    {
+                        avt.Attributes["src"] = "/Uploads/Staff/" + item.Avata;
+                        lblName.Text = item.Name;
+                    }
                 }
+                catch { }
+                
                 
             }
             

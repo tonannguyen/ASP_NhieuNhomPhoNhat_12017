@@ -9,7 +9,6 @@
 
 namespace Web.UI {
     
-
     
     public partial class ListBill {
         
@@ -21,6 +20,15 @@ namespace Web.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
+        
+        /// <summary>
+        /// drType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drType;
         
         /// <summary>
         /// gv_Bills control.

@@ -39,7 +39,22 @@ namespace Web.UI
             try
             {
                 con.Open();
-                string query = "select Bills.ID,Bills.EmployeeID,Bills.Type, SUM((Items.Quantity)*(Flowers.Price)) AS 'Total Bill' from Bills JOIN Items ON Bills.ID = Items.BillID JOIN Flowers ON Items.FlowerID = Flowers.ID GROUP BY Bills.ID,Bills.EmployeeID,Bills.Type";
+                string[] selectedCol = new string[] {
+                "bill.ID AS ID",
+                "bill.Quantity AS 'Quantity'",
+                "bill.Price AS 'Total'",
+                "st.Name AS 'Employee'",
+                "bill.CreatedTime AS 'Created Time'",
+                "bill.UpdatedTime AS 'Updated Time'",
+                };
+                string query = "select " + String.Join(",", selectedCol) + " from Bills bill INNER JOIN Employees st ON bill.EmployeeID = st.ID"; 
+                if (Convert.ToInt32(drType.SelectedValue) == 0)
+                {
+                    query = "select " + String.Join(",", selectedCol) + " from Bills bill INNER JOIN Employees st ON bill.EmployeeID = st.ID where bill.Type = 0";
+                }else if (Convert.ToInt32(drType.SelectedValue) == 1)
+                {
+                    query = "select " + String.Join(",", selectedCol) + " from Bills bill INNER JOIN Employees st ON bill.EmployeeID = st.ID where bill.Type = 1";
+                }
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(data);

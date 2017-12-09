@@ -52,14 +52,13 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-
-                      <li><a href="/Default.aspx">Home</a></li>
-                      <li><a href="/Bill/WriteBill.aspx">WriteBill</a></li>
-                    <li><a href="/Bill/ListBill.aspx">ListBills</a></li>
-                      <li><a href="/Type/List.aspx">Types</a></li>
+                    <li><a href="/Default.aspx">Home</a></li>
+                    <li><a href="/Bill/WriteBill.aspx">Write Bill</a></li>
+                    <li><a href="/Bill/ListBill.aspx">List Bills</a></li>
+                    <li><a href="/Type/List.aspx">Types</a></li>
                     <li><a href="/Positions/ListPosition.aspx">Positions</a></li>
-                      <li><a href="/Flower/ListFlower.aspx">Flowers</a></li>
-                      <li><a href="/Staff/ListStaff.aspx">Employees</a></li>
+                    <li><a href="/Flower/ListFlower.aspx">Flowers</a></li>
+                    <li><a href="/Staff/ListStaff.aspx">Employees</a></li>
                 </ul>
             </div>
             </div>

@@ -211,6 +211,7 @@
     <Content Include="App_Themes\Theme1\vendors\jquery\src\var\support.js" />
     <Content Include="App_Themes\Theme1\vendors\jquery\src\var\toString.js" />
     <Content Include="App_Themes\Theme1\vendors\jquery\src\wrap.js" />
+    <Content Include="Bill\ListBill.aspx" />
     <Content Include="Bill\WriteBill.aspx" />
     <Content Include="Flower\DetailFlower.aspx" />
     <Content Include="Flower\UpdateFlower.aspx" />
@@ -390,6 +391,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\Common.cs" />
+    <Compile Include="Bill\ListBill.aspx.cs">
+      <DependentUpon>ListBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bill\ListBill.aspx.designer.cs">
+      <DependentUpon>ListBill.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Bill\WriteBill.aspx.cs">
       <DependentUpon>WriteBill.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -148,6 +148,60 @@ namespace Web.UI {
         protected global::System.Web.UI.WebControls.GridView gv_change;
         
         /// <summary>
+        /// tb_change control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table tb_change;
+        
+        /// <summary>
+        /// lb_fl_Type control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell lb_fl_Type;
+        
+        /// <summary>
+        /// lb_fl_Name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell lb_fl_Name;
+        
+        /// <summary>
+        /// lb_quantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell lb_quantity;
+        
+        /// <summary>
+        /// lb_Price control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell lb_Price;
+        
+        /// <summary>
+        /// lb_TotalPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell lb_TotalPrice;
+        
+        /// <summary>
         /// saveBill control.
         /// </summary>
         /// <remarks>

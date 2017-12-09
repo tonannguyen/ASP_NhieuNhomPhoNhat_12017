@@ -24,12 +24,12 @@
               <span class="green" style="float: right;"> VNĐ</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Doanh thu quý </span>
+              <span class="count_top"><i class="fa fa-user"></i> Doanh thu quý trước </span>
               <div><asp:Label ID="lblQuarter" runat="server" Text="123"  style="font-size: 35px;margin-left: 20px;"></asp:Label></div>
               <span class="green" style="float: right;"> VNĐ</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Doanh thu năm </span>
+              <span class="count_top"><i class="fa fa-user"></i> Doanh thu năm trước</span>
               <div><asp:Label ID="lblYear" runat="server" Text="123"  style="font-size: 35px;margin-left: 20px;"></asp:Label></div>
               <span class="green" style="float: right;"> VNĐ</span>
             </div>

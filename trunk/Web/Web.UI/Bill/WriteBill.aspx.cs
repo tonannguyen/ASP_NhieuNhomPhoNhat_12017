@@ -12,6 +12,7 @@ using System.Web.UI.WebControls;
 using Web.Model;
 
 
+
 namespace Web.UI
 {
     public partial class WriteBill : System.Web.UI.Page

@@ -10,6 +10,7 @@
 namespace Web.UI {
     
     
+
     public partial class WriteBill {
         
         /// <summary>

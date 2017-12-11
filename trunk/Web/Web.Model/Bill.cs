@@ -13,7 +13,7 @@ namespace Web.Model
         public int ID { get; set; }
         public int EmployeeID { get; set; }
         public int Type { get; set; }
-        public float Quantity { get; set; }
+        public double Quantity { get; set; }
         public decimal Price { get; set; }
         public string CreatedTime { get; set; }
         public string UpdatedTime { get; set; }

@@ -12,11 +12,11 @@ namespace Web.Model
         [Key]
         public int ID { get; set; }
         public string YearID { get; set; }
-        public float QuantityOfDate { get; set; }
-        public float QuantityOfWeek { get; set; }
-        public float QuantityOfMonth { get; set; }
-        public float QuantityOfQuater { get; set; }
-        public float QuantityOfYear { get; set; }
+        public decimal QuantityOfDate { get; set; }
+        public decimal QuantityOfWeek { get; set; }
+        public decimal QuantityOfMonth { get; set; }
+        public decimal QuantityOfQuater { get; set; }
+        public decimal QuantityOfYear { get; set; }
         public DateTime CreatedTime { get; set; }
         public DateTime UpdatedTime { get; set; }
         public bool Active { get; set; }

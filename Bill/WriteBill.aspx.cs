@@ -342,58 +342,5 @@ namespace Web.UI
             }
 
         }
-
-        protected string getQuantity(string q)
-        {
-            string total = "";
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MasterDbContext"].ToString());
-            try
-            {
-                con.Open();
-                string query = q;
-                SqlCommand cmd = new SqlCommand(query, con);
-                using (SqlDataReader dr = cmd.ExecuteReader())
-                {
-                    bool success = dr.Read();
-                    if (success)
-                    {
-                        total = dr.GetValue(0).ToString();
-                    }
-                }
-
-            }
-            catch
-            {
-            }
-            finally
-            {
-                con.Close();
-            }
-            return total;
-        }
-
-        protected void saveBill_onclick(object sender, EventArgs e)
-        {
-            using (MasterDbContext db = new MasterDbContext())
-            {
-                // change quantity bill
-                int id_bill = Convert.ToInt32(billID_hint.Value);
-                Bill changeBill = db.Bills.Find(id_bill);
-                double totalQuantity = Convert.ToDouble(getQuantity("SELECT sum(Quantity) FROM Items WHERE CONVERT(DATE, CreatedTime) = CONVERT(DATE, GETDATE()) AND BillID =" + id_bill));
-                decimal totalPrice = Convert.ToDecimal(getQuantity("SELECT sum(fl.Price*item.Quantity) FROM Items item, Flowers fl WHERE CONVERT(DATE, item.CreatedTime) = CONVERT(DATE, GETDATE()) AND item.FlowerID = fl.ID AND item.BillID =" + id_bill));
-                changeBill.Quantity += totalQuantity;
-                changeBill.Price += totalPrice;
-                db.Entry(changeBill).State = EntityState.Modified;
-                ////data of revenue 
-                Revenue revenue = new Revenue();
-                decimal quantityDateTypeBuy = Convert.ToDecimal(getQuantity("SELECT Sum(Price) FROM Bills WHERE CONVERT(DATE, CreatedTime) = CONVERT(DATE, GETDATE()) AND Type = 0"));
-                decimal quantityDateTypeSale = Convert.ToDecimal(getQuantity("SELECT Sum(Price) FROM Bills WHERE CONVERT(DATE, CreatedTime) = CONVERT(DATE, GETDATE()) AND Type = 1"));
-                revenue.QuantityOfDate = quantityDateTypeSale - quantityDateTypeBuy;
-
-                db.Revenues.Add(revenue);
-                db.SaveChanges();
-                Response.Redirect("~/Bill/ListBill.aspx");
-            }
-        }
 	}
 }

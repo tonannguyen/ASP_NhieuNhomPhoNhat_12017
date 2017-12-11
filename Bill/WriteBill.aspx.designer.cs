@@ -10,6 +10,7 @@
 namespace Web.UI {
     
     
+
     public partial class WriteBill {
         
         /// <summary>
@@ -148,12 +149,12 @@ namespace Web.UI {
         protected global::System.Web.UI.WebControls.GridView gv_change;
         
         /// <summary>
-        /// btn_saveBill control.
+        /// saveBill control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_saveBill;
+        protected global::System.Web.UI.WebControls.Button saveBill;
     }
 }

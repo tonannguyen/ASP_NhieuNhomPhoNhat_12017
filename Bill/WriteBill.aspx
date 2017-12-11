@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
     <div class="right_col" role="main">
+          <div class="">
             <div class="page-title">
               <div class="title_left">
                 <h3>Write Bill</h3>
@@ -126,10 +127,9 @@
                   </div>
                 </div>
               </div>
-				   <asp:Button ID="btn_saveBill" class="pull-right" runat="server" Text="Save Bill"  OnClick="saveBill_onclick" />
+				   <asp:Button ID="saveBill" class="pull-right" runat="server" Text="Save Bill" />
 				 </form>
               <div class="clearfix"></div>
           </div>
-        </div>
         </div>
 </asp:Content>

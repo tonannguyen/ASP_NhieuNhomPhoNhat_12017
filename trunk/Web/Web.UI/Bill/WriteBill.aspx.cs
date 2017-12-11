@@ -377,6 +377,7 @@ namespace Web.UI
             using (MasterDbContext db = new MasterDbContext())
             {
                 // change quantity bill
+                
                 int id_bill = Convert.ToInt32(billID_hint.Value);
                 Bill changeBill = db.Bills.Find(id_bill);
                 double totalQuantity = Convert.ToDouble(getQuantity("SELECT sum(Quantity) FROM Items WHERE CONVERT(DATE, CreatedTime) = CONVERT(DATE, GETDATE()) AND BillID =" + id_bill));
@@ -384,17 +385,57 @@ namespace Web.UI
                 changeBill.Quantity += totalQuantity;
                 changeBill.Price += totalPrice;
                 db.Entry(changeBill).State = EntityState.Modified;
-                ////data of revenue 
-                Revenue revenue = new Revenue();
-                decimal quantityDateTypeBuy = Convert.ToDecimal(getQuantity("SELECT Sum(Price) FROM Bills WHERE CONVERT(DATE, CreatedTime) = CONVERT(DATE, GETDATE()) AND Type = 0"));
-                decimal quantityDateTypeSale = Convert.ToDecimal(getQuantity("SELECT Sum(Price) FROM Bills WHERE CONVERT(DATE, CreatedTime) = CONVERT(DATE, GETDATE()) AND Type = 1"));
-                revenue.TotalBuy = quantityDateTypeBuy;
-                revenue.TotalSale = quantityDateTypeSale;
-                revenue.QuantityOfDate = quantityDateTypeSale - quantityDateTypeBuy;
-                db.Revenues.Add(revenue);
                 db.SaveChanges();
+                ////data of revenue 
+
+                /// query
+                /// 
+                var nowDate = DateTime.Now;
+                IQueryable<Revenue> qr = db.Revenues.AsNoTracking();
+                qr = qr.Where(x => x.CreatedTime <= nowDate && x.CreatedTime >= nowDate.Date);
+
+                // get 
+                decimal quantityDateTypeBuy = Convert.ToDecimal(getQuantity("SELECT ISNULL(Sum(Price), 0) FROM Bills WHERE CONVERT(DATE, CreatedTime) = CONVERT(DATE, GETDATE()) AND Type = 0"));
+                decimal quantityDateTypeSale = Convert.ToDecimal(getQuantity("SELECT ISNULL(Sum(Price), 0) FROM Bills WHERE CONVERT(DATE, CreatedTime) = CONVERT(DATE, GETDATE()) AND Type = 1"));
+
+                if (qr.Count() <= 0)
+                {
+                    Revenue revenue = new Revenue();
+
+                    revenue.TotalBuy = quantityDateTypeBuy;
+                    revenue.TotalSale = quantityDateTypeSale;
+                    revenue.QuantityOfDate = quantityDateTypeSale - quantityDateTypeBuy;
+                    db.Revenues.Add(revenue);
+                }
+                else
+                {
+                    Revenue revenue = qr.FirstOrDefault();
+                    revenue.TotalBuy = quantityDateTypeBuy;
+                    revenue.TotalSale = quantityDateTypeSale;
+                    revenue.QuantityOfDate = quantityDateTypeSale - quantityDateTypeBuy;
+
+                    // set update
+                    db.Entry(revenue).State = EntityState.Modified;
+                }
+
+            
+                db.SaveChanges();
+                
+                
                 Response.Redirect("~/Bill/ListBill.aspx");
             }
         }
+
+        //private int coutBillByType(int type)
+        //{
+        //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MasterDbContext"].ToString());
+
+        //    con.Open();
+        //    string query = "select count(*) from Bills where Type=" + type;
+        //    SqlCommand cmd = new SqlCommand(query, con);
+        //    string output = cmd.ExecuteScalar().ToString();
+        //    int totalBill = Convert.ToInt32(output);
+        //    return totalBill;
+        //}
 	}
 }

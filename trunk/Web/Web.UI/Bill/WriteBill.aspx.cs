@@ -388,8 +388,9 @@ namespace Web.UI
                 Revenue revenue = new Revenue();
                 decimal quantityDateTypeBuy = Convert.ToDecimal(getQuantity("SELECT Sum(Price) FROM Bills WHERE CONVERT(DATE, CreatedTime) = CONVERT(DATE, GETDATE()) AND Type = 0"));
                 decimal quantityDateTypeSale = Convert.ToDecimal(getQuantity("SELECT Sum(Price) FROM Bills WHERE CONVERT(DATE, CreatedTime) = CONVERT(DATE, GETDATE()) AND Type = 1"));
+                revenue.TotalBuy = quantityDateTypeBuy;
+                revenue.TotalSale = quantityDateTypeSale;
                 revenue.QuantityOfDate = quantityDateTypeSale - quantityDateTypeBuy;
-
                 db.Revenues.Add(revenue);
                 db.SaveChanges();
                 Response.Redirect("~/Bill/ListBill.aspx");

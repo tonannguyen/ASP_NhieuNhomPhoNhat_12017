@@ -19,19 +19,19 @@ namespace Web.UI
 
             //string select
             string quantityDate     = "SELECT Sum(QuantityOfDate) FROM Revenues WHERE CONVERT(DATE, CreatedTime) = CONVERT(DATE, GETDATE())";
-            string quantityLastWeek = "SELECT Sum(QuantityOfWeek)" +
+            string quantityLastWeek = "SELECT Sum(QuantityOfDate)" +
                                       " FROM Revenues" +
                                       " WHERE CONVERT(DATE, CreatedTime) >= DATEADD(day, -(DATEPART(dw, GETDATE()) + 6), CONVERT(DATE, GETDATE()))" +
                                       " AND CONVERT(DATE, CreatedTime) <  DATEADD(day, 1 - DATEPART(dw, GETDATE()), CONVERT(DATE, GETDATE()))";
-            string quantityLastMonth = "SELECT Sum(QuantityOfMonth)" +
+            string quantityLastMonth = "SELECT Sum(QuantityOfDate)" +
                                       " FROM Revenues" +
                                       " WHERE CONVERT(DATE, CreatedTime) >= DATEADD(MONTH, DATEDIFF(MONTH, 31, CURRENT_TIMESTAMP), 0)" +
                                       " AND CONVERT(DATE, CreatedTime) < DATEADD(MONTH, DATEDIFF(MONTH, 0, CURRENT_TIMESTAMP), 0)";
-            string quantityQuarter = "SELECT Sum(QuantityOfQuater)" +
+            string quantityQuarter = "SELECT Sum(QuantityOfDate)" +
                                       " FROM Revenues" +
                                       " datepart(qq,CONVERT(DATE, GETDATE())) - datepart(qq,CONVERT(DATE, CreatedTime)) = 1" +
                                       " AND YearID = datepart(year,getdate())";
-            string quntityYear      = "SELECT Sum(QuantityOfYear) FROM Revenues WHERE CONVERT(DATE, CreatedTime) > DATEADD(year,-1,GETDATE())";
+            string quntityYear = "SELECT Sum(QuantityOfDate) FROM Revenues WHERE CONVERT(DATE, CreatedTime) > DATEADD(year,-1,GETDATE())";
             lblDay.Text = getQuantity(quantityDate);
             lblLastWeek.Text = getQuantity(quantityLastWeek);
             lblLastMonth.Text = getQuantity(quantityLastMonth);

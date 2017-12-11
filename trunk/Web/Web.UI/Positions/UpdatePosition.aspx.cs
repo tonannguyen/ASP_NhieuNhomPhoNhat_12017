@@ -13,9 +13,27 @@ namespace Web.UI.Positons
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["logined"] == null)
+            using (MasterDbContext db = new MasterDbContext())
             {
-                Response.Redirect("~/Login.aspx");
+
+
+                // check session
+                if (Session["logined"] != null)
+                {
+                    //find current user
+                    int idUser = Convert.ToInt32(Session["logined"].ToString()); ;
+                    var user = db.Employees.Find(idUser);
+                    //find role 
+                    var role = db.Positions.Find((int)user.PositionID);
+                    // check role ?= Admin
+                    if (role.Value != "Admin")
+                        Response.Redirect("~/Positions/ListPosition.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+
             }
 
             if (Request.QueryString["ID"] != null && string.IsNullOrEmpty(Request.QueryString["ID"].ToString()) == false && Request.HttpMethod == "GET")

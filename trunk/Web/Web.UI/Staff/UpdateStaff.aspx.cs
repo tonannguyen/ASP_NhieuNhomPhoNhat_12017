@@ -24,17 +24,18 @@ namespace Web.UI.Staff
             //set role
             using (MasterDbContext db = new MasterDbContext())
             {
-                //find current user
-                int idUser = Convert.ToInt32(Session["logined"].ToString()); ;
-                var user = db.Employees.Find(idUser);
-                //find role 
-                var role = db.Positions.Find((int)user.PositionID);
+                
 
                 // check session
                 if (Session["logined"] != null )
                 {
+                    //find current user
+                    int idUser = Convert.ToInt32(Session["logined"].ToString()); ;
+                    var user = db.Employees.Find(idUser);
+                    //find role 
+                    var role = db.Positions.Find((int)user.PositionID);
                     // check role ?= Admin
-                    if(role.Value != "Admin")
+                    if (role.Value != "Admin")
                         Response.Redirect("~/Staff/ListStaff.aspx");
                 }
                 else
@@ -101,9 +102,9 @@ namespace Web.UI.Staff
 
                         // set data
                         item.Name = txtName.Text;
-                        item.Password = txtPass.Text;
                         item.Phone = txtPhone.Text;
                         item.Adress = txtAdress.Text;
+                        item.Password = Common.HashPassword(txtPass.Text, "ps");
                         item.PositionID = Convert.ToInt32(PositionList.SelectedValue);
                         item.Salary = decimal.Parse(txtSalary.Text);
                         item.UpdatedTime = DateTime.Now;
@@ -148,7 +149,7 @@ namespace Web.UI.Staff
 
                     var staff = new Employee();
                     staff.Name = txtName.Text;
-                    staff.Password = txtPass.Text;
+                    staff.Password = Common.HashPassword(txtPass.Text, "ps");
                     staff.Phone = txtPhone.Text;
                     staff.Adress = txtAdress.Text;
                     staff.PositionID = Convert.ToInt32(PositionList.SelectedValue);

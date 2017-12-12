@@ -35,8 +35,8 @@ namespace Web.UI.Staff
                         // set data
                         image.Attributes["src"] = "/Uploads/Staff/" + item.Avata;
                         lblName.Text = item.Name;
-                        lblPhone.Text = item.Name;
-                        lblAdress.Text = item.Name;
+                        lblPhone.Text = item.Phone;
+                        lblAdress.Text = item.Address;
                         lblPositon.Text = pos.Value;
                         lblSalary.Text = item.Salary.ToString();
                         

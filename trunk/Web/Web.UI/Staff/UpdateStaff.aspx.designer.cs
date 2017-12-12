@@ -40,6 +40,24 @@ namespace Web.UI.Staff {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularName;
         
         /// <summary>
+        /// RequiredAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredAddress;
+        
+        /// <summary>
+        /// RequiredSalary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredSalary;
+        
+        /// <summary>
         /// txtName control.
         /// </summary>
         /// <remarks>

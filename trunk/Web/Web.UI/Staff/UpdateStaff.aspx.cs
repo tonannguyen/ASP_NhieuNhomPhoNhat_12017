@@ -29,32 +29,30 @@ namespace Web.UI.Staff
                 // check session
                 if (Session["logined"] != null)
                 {
-
                     //find current user
                     int idUser = Convert.ToInt32(Session["logined"].ToString()); ;
                     var user = db.Employees.Find(idUser);
                     //find role 
-
                     var role = db.Positions.Find((int)user.PositionID);
-                    // check role ?= Admin
-
+                    // check role ?= Admin  and curent user
+                    
                     if (role.Value != "Admin")
-                        Response.Redirect("~/Staff/ListStaff.aspx");
                     {
-                        var id = Convert.ToInt32(Request.QueryString["ID"].ToString());
-                        var item = db.Employees.Find(id);
-                        if (item.ID != idUser)
+                        int id = Convert.ToInt32(Request.QueryString["ID"].ToString());
+                        if(id != idUser)
                             Response.Redirect("~/Staff/ListStaff.aspx");
-
                     }
-                    if (user.ID != 1)
+                    if(Request.QueryString["ID"] != null && string.IsNullOrEmpty(Request.QueryString["ID"].ToString()) == false && Request.HttpMethod == "GET")
                     {
+                        txtName.ReadOnly = true;
                         PositionList.Enabled = false;
-                        txtSalary.Enabled = false;
+                        txtSalary.ReadOnly = true;
+                        if(role.Value == "Admin")
+                        {
+                            PositionList.Enabled = true;
+                            txtSalary.ReadOnly = false;
+                        }
                     }
-
-
-
                 }
                 else
                 {
@@ -80,14 +78,15 @@ namespace Web.UI.Staff
 
                             if (item != null)
                             {
+                                var currentPosition = db.Positions.Find(item.PositionID);
 
                                 // set data
                                 txtName.Text = item.Name;
                                 txtPass.Text = item.Password;
                                 txtPhone.Text = item.Phone;
-                                txtAdress.Text = item.Adress;
+                                txtAdress.Text = item.Address;
 
-                                PositionList.SelectedIndex = PositionList.Items.IndexOf(PositionList.Items.FindByText(item.PositionID.ToString()));
+                                PositionList.SelectedIndex = PositionList.Items.IndexOf(PositionList.Items.FindByText(currentPosition.Value));
                                 txtSalary.Text = item.Salary.ToString();
 
 
@@ -122,7 +121,7 @@ namespace Web.UI.Staff
                         // set data
                         item.Name = txtName.Text;
                         item.Phone = txtPhone.Text;
-                        item.Adress = txtAdress.Text;
+                        item.Address = txtAdress.Text;
                         item.Password = Common.HashPassword(txtPass.Text, "ps");
                         item.PositionID = Convert.ToInt32(PositionList.SelectedValue);
                         item.Salary = decimal.Parse(txtSalary.Text);
@@ -171,7 +170,7 @@ namespace Web.UI.Staff
                     staff.Name = txtName.Text;
                     staff.Password = Common.HashPassword(txtPass.Text, "ps");
                     staff.Phone = txtPhone.Text;
-                    staff.Adress = txtAdress.Text;
+                    staff.Address = txtAdress.Text;
                     staff.PositionID = Convert.ToInt32(PositionList.SelectedValue);
                     staff.Salary = decimal.Parse(txtSalary.Text);
 

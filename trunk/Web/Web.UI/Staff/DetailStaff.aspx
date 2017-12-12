@@ -37,7 +37,7 @@
                      </div>
                   </div>
                   <div class="form-group">
-                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Adress: 
+                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Address: 
                      </label>
                      <div class="col-md-6 col-sm-6 col-xs-12"  style="margin-top:8px;">
                          <asp:Label ID="lblAdress" runat="server" ></asp:Label>
@@ -45,7 +45,7 @@
                   </div>
                   
                   <div class="form-group">
-                     <label class="control-label col-md-3 col-sm-3 col-xs-12" >Positon: 
+                     <label class="control-label col-md-3 col-sm-3 col-xs-12" >Position: 
                      </label>
                      <div class="col-md-6 col-sm-6 col-xs-12"  style="margin-top:8px;">
                          <asp:Label ID="lblPositon" runat="server" ></asp:Label>

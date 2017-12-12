@@ -15,7 +15,7 @@ namespace Web.Model
         public string Name { get; set; }
         public string Password { get; set; }
         public string Phone { get; set; }
-        public string Adress { get; set; }
+        public string Address { get; set; }
         public string Avata { get; set; }
         public int PositionID { get; set; }
         public decimal Salary { get; set; }
@@ -32,7 +32,7 @@ namespace Web.Model
             this.Name = "";
             this.Password = "";
             this.Phone = "";
-            this.Adress = "";
+            this.Address = "";
             this.Avata = "";
             this.PositionID = 1;
             this.Salary = 0;

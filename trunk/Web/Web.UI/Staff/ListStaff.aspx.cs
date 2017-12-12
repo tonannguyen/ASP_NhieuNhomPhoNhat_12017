@@ -40,7 +40,7 @@ namespace Web.UI
                         "st.ID AS ID",
                         "st.Name AS 'Name'",
                         "st.Phone AS 'Phone'",
-                        "st.Adress AS 'Adress'",
+                        "st.Address AS 'Address'",
                         "pos.Value AS 'Position'",
                         "st.Salary AS 'Salary'",
                         "st.CreatedTime AS 'Created Time'",

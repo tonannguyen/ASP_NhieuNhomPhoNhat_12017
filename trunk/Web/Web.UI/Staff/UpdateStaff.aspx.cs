@@ -36,7 +36,13 @@ namespace Web.UI.Staff
                     var role = db.Positions.Find((int)user.PositionID);
                     // check role ?= Admin
                     if (role.Value != "Admin")
-                        Response.Redirect("~/Staff/ListStaff.aspx");
+                    {
+                        var id = Convert.ToInt32(Request.QueryString["ID"].ToString());
+                        var item = db.Employees.Find(id);
+                        if (item.ID != idUser)
+                          Response.Redirect("~/Staff/ListStaff.aspx");
+                    }
+                        
                 }
                 else
                 {
@@ -72,6 +78,7 @@ namespace Web.UI.Staff
 
                             PositionList.SelectedIndex = PositionList.Items.IndexOf(PositionList.Items.FindByText(item.PositionID.ToString()));
                             txtSalary.Text = item.Salary.ToString();
+                            
                         }
                         else
                         {
@@ -108,6 +115,7 @@ namespace Web.UI.Staff
                         item.PositionID = Convert.ToInt32(PositionList.SelectedValue);
                         item.Salary = decimal.Parse(txtSalary.Text);
                         item.UpdatedTime = DateTime.Now;
+                        
                         // upload solving
                         if (avatar.HasFile)
                         {

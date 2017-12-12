@@ -19,14 +19,15 @@
                     <h3>List of staff in the store</h3>
                   </div>
                 </div>
-                  <a href="UpdateStaff.aspx" class="pull-right btn btn-primary">Create new</a>
+                  <a href="UpdateStaff.aspx" class="pull-right btn btn-primary" id ="tagCreate" runat="server" >Create new</a>
+                  
                 <div class="clearfix"></div>
                   <asp:GridView ID="GridViewStaff" runat="server" CssClass="table table-bordered">
                    <Columns>
                       <asp:TemplateField HeaderText="Actions">
                         <ItemTemplate>
-                            <a href="DetailStaff.aspx?ID=<%#Eval("ID")%>" class="fa fa-eye btn btn-success"></a>
-                            <a href="UpdateStaff.aspx?ID=<%#Eval("ID")%>" class="fa fa-pencil btn btn-info"></a>
+                            <a href="DetailStaff.aspx?ID=<%#Eval("ID")%>" class="fa fa-eye btn btn-success" ></a>
+                            <a href="UpdateStaff.aspx?ID=<%#Eval("ID")%>" class="fa fa-pencil btn btn-info" id="tagUpdate"></a>
                             <button class="fa fa-trash btn btn-danger" type="button" onclick="confirmToDelete(<%#Eval("ID")%>)"></button>
                         </ItemTemplate>
                       </asp:TemplateField>

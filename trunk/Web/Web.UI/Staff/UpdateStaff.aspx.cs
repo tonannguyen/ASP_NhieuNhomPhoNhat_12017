@@ -22,73 +22,85 @@ namespace Web.UI.Staff
         protected void Page_Load(object sender, EventArgs e)
         {
             //set role
+
             using (MasterDbContext db = new MasterDbContext())
             {
-                
 
                 // check session
-                if (Session["logined"] != null )
+                if (Session["logined"] != null)
                 {
+
                     //find current user
                     int idUser = Convert.ToInt32(Session["logined"].ToString()); ;
                     var user = db.Employees.Find(idUser);
                     //find role 
+
                     var role = db.Positions.Find((int)user.PositionID);
                     // check role ?= Admin
+
                     if (role.Value != "Admin")
+                        Response.Redirect("~/Staff/ListStaff.aspx");
                     {
                         var id = Convert.ToInt32(Request.QueryString["ID"].ToString());
                         var item = db.Employees.Find(id);
                         if (item.ID != idUser)
-                          Response.Redirect("~/Staff/ListStaff.aspx");
+                            Response.Redirect("~/Staff/ListStaff.aspx");
+
                     }
-                        
+                    if (user.ID != 1)
+                    {
+                        PositionList.Enabled = false;
+                        txtSalary.Enabled = false;
+                    }
+
+
+
                 }
                 else
                 {
                     Response.Redirect("~/Login.aspx");
                 }
 
-            }
-            
-            if (!Page.IsPostBack)
-            {
-                // get data source
-                PositionList.DataSource = GetPosition();
-                PositionList.DataValueField = "ID";
-                PositionList.DataTextField = "Value";
-                PositionList.DataBind();
 
-                if (Request.QueryString["ID"] != null && string.IsNullOrEmpty(Request.QueryString["ID"].ToString()) == false && Request.HttpMethod == "GET")
+
+                if (!Page.IsPostBack)
                 {
-                    // get data
-                    using (MasterDbContext db = new MasterDbContext())
+                    // get data source
+                    PositionList.DataSource = GetPosition();
+                    PositionList.DataValueField = "ID";
+                    PositionList.DataTextField = "Value";
+                    PositionList.DataBind();
+
+                    if (Request.QueryString["ID"] != null && string.IsNullOrEmpty(Request.QueryString["ID"].ToString()) == false && Request.HttpMethod == "GET")
                     {
-                        var id = Convert.ToInt32(Request.QueryString["ID"].ToString());
-                        var item = db.Employees.Find(id);
+                        // get data
 
-                        if (item != null)
-                        {
+                            var id = Convert.ToInt32(Request.QueryString["ID"].ToString());
+                            var item = db.Employees.Find(id);
 
-                            // set data
-                            txtName.Text = item.Name;
-                            txtPass.Text = item.Password;
-                            txtPhone.Text = item.Phone;
-                            txtAdress.Text = item.Adress;
+                            if (item != null)
+                            {
 
-                            PositionList.SelectedIndex = PositionList.Items.IndexOf(PositionList.Items.FindByText(item.PositionID.ToString()));
-                            txtSalary.Text = item.Salary.ToString();
-                            
-                        }
-                        else
-                        {
-                            Response.Redirect("~/ListStaff.aspx");
-                        }
+                                // set data
+                                txtName.Text = item.Name;
+                                txtPass.Text = item.Password;
+                                txtPhone.Text = item.Phone;
+                                txtAdress.Text = item.Adress;
+
+                                PositionList.SelectedIndex = PositionList.Items.IndexOf(PositionList.Items.FindByText(item.PositionID.ToString()));
+                                txtSalary.Text = item.Salary.ToString();
+
+
+                            }
+                            else
+                            {
+                                Response.Redirect("~/ListStaff.aspx");
+                            }
+                        
                     }
                 }
             }
         }
-
         protected void btnSaveClick(object sender, EventArgs e)
         {
             using (MasterDbContext db = new MasterDbContext())

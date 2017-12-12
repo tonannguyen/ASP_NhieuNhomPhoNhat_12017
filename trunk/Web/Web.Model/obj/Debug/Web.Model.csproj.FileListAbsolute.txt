@@ -60,3 +60,12 @@ D:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\obj\Debug\Web.Model.csprojReso
 D:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\obj\Debug\Web.Model.csproj.CoreCompileInputs.cache
 D:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\obj\Debug\Web.Model.dll
 D:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\obj\Debug\Web.Model.pdb
+F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\Web.Model.dll.config
+F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\Web.Model.dll
+F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\Web.Model.pdb
+F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\EntityFramework.dll
+F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\EntityFramework.SqlServer.dll
+F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\EntityFramework.xml
+F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\bin\Debug\EntityFramework.SqlServer.xml
+F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\obj\Debug\Web.Model.dll
+F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.Model\obj\Debug\Web.Model.pdb

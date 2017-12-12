@@ -20,50 +20,56 @@ namespace Web.UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["logined"] != null)
+            using (MasterDbContext db = new MasterDbContext())
             {
-                double type, id;
-
-                if(IsPostBack)
-                try {
-                    load_data();
-                }
-                catch { }
-				if (!IsPostBack)
+                if (Session["logined"] != null)
                 {
+                    int idUser = Convert.ToInt32(Session["logined"].ToString()); ;
+                    var user = db.Employees.Find(idUser);
 
-					staffList.DataSource = GetStaff();
-                    staffList.DataValueField = "ID";
-                    staffList.DataTextField = "Name";
-                    staffList.DataBind();
-                    //// type
-                    typeList.DataSource = GetType();
-                    typeList.DataValueField = "ID";
-                    typeList.DataTextField = "Name";
-                    typeList.DataBind();
-					//// flower
-                    try
+                    if (IsPostBack)
+                        try
+                        {
+                            load_data();
+                        }
+                        catch { }
+                    if (!IsPostBack)
                     {
-                        flowerList.DataSource = GetFlower(Convert.ToDouble(typeList.Text));
-                        flowerList.DataValueField = "ID";
-                        flowerList.DataTextField = "Name";
-                        flowerList.DataBind();
-                        price.InnerHtml = GetPriceFlower(Convert.ToDouble(flowerList.Text)) + " VNĐ";
-                    }
-                    catch { }
-					//// price
-					
 
-				}
-                ////
-            }
-            else
-            {
-                Response.Redirect("~/Login.aspx");
+                        staffList.DataSource = GetStaff(user.ID);
+                        staffList.DataValueField = "ID";
+                        staffList.DataTextField = "Name";
+                        staffList.DataBind();
+                        staffList.Enabled = false;
+                        //// type
+                        typeList.DataSource = GetType();
+                        typeList.DataValueField = "ID";
+                        typeList.DataTextField = "Name";
+                        typeList.DataBind();
+                        //// flower
+                        try
+                        {
+                            flowerList.DataSource = GetFlower(Convert.ToDouble(typeList.Text));
+                            flowerList.DataValueField = "ID";
+                            flowerList.DataTextField = "Name";
+                            flowerList.DataBind();
+                            price.InnerHtml = GetPriceFlower(Convert.ToDouble(flowerList.Text))+"";
+                        }
+                        catch { }
+                        //// price
+
+
+                    }
+                    ////
+                }
+                else
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
             }
         }
 
-        private DataTable GetStaff()
+        private DataTable GetStaff(int id)
         {
 
             DataTable data = new DataTable();
@@ -73,7 +79,7 @@ namespace Web.UI
             try
             {
                 con.Open();
-                string query = "select * from Employees  where Active = 1";
+                string query = "select * from Employees  where Active = 1 AND ID="+id;
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(data);
@@ -248,7 +254,7 @@ namespace Web.UI
 
         protected void flowerList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            price.InnerHtml = GetPriceFlower(Convert.ToDouble(flowerList.Text))+ " VNĐ";
+            price.InnerHtml = GetPriceFlower(Convert.ToDouble(flowerList.Text))+"";
 
 			if (quantity.ToString() != null)
             {
@@ -264,7 +270,7 @@ namespace Web.UI
         {
 			try
 			{
-				totalPrice.InnerHtml = "" + (GetPriceFlower(Convert.ToDouble(flowerList.Text)) * Convert.ToDouble(quantity.Text)) + " VNĐ";
+				totalPrice.InnerHtml = "" + (GetPriceFlower(Convert.ToDouble(flowerList.Text)) * Convert.ToDouble(quantity.Text)) + "";
 			}
 			catch { }
         }
@@ -426,16 +432,5 @@ namespace Web.UI
             }
         }
 
-        //private int coutBillByType(int type)
-        //{
-        //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MasterDbContext"].ToString());
-
-        //    con.Open();
-        //    string query = "select count(*) from Bills where Type=" + type;
-        //    SqlCommand cmd = new SqlCommand(query, con);
-        //    string output = cmd.ExecuteScalar().ToString();
-        //    int totalBill = Convert.ToInt32(output);
-        //    return totalBill;
-        //}
 	}
 }

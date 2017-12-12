@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Web.Model;
 
 namespace Web.UI
 {
@@ -14,16 +15,28 @@ namespace Web.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["logined"] != null)
+            using (MasterDbContext db = new MasterDbContext())
             {
-                DataTable data = new DataTable();
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MasterDbContext"].ToString());
-
-
-                try
+                if (Session["logined"] != null)
                 {
-                    con.Open();
-                    string[] selectedCol = new string[] {
+                    DataTable data = new DataTable();
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MasterDbContext"].ToString());
+
+                    //find current user
+                    int idUser = Convert.ToInt32(Session["logined"].ToString()); ;
+                    var user = db.Employees.Find(idUser);
+                    if (user.Name != "Admin")
+                    {
+                        tagCreate.Visible = false;
+                    }
+
+                    
+
+
+                    try
+                    {
+                        con.Open();
+                        string[] selectedCol = new string[] {
                         "st.ID AS ID",
                         "st.Name AS 'Name'",
                         "st.Phone AS 'Phone'",
@@ -33,28 +46,29 @@ namespace Web.UI
                         "st.CreatedTime AS 'Created Time'",
                         "st.UpdatedTime AS 'Updated Time'",
                     };
-                    string query = "select " + String.Join(",", selectedCol) + " from Employees st INNER JOIN Positions pos ON st.PositionID = pos.ID where st.Active = 1";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        string query = "select " + String.Join(",", selectedCol) + " from Employees st INNER JOIN Positions pos ON st.PositionID = pos.ID where st.Active = 1";
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
-                    adapter.Fill(data);
+                        adapter.Fill(data);
 
-                    GridViewStaff.DataSource = data;
-                    GridViewStaff.DataBind();
+                        GridViewStaff.DataSource = data;
+                        GridViewStaff.DataBind();
 
+                    }
+                    catch
+                    {
+
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
                 }
-                catch
+                else
                 {
-
+                    Response.Redirect("~/Login.aspx");
                 }
-                finally
-                {
-                    con.Close();
-                }
-            }
-            else
-            {
-                Response.Redirect("~/Login.aspx");
             }
 
         }

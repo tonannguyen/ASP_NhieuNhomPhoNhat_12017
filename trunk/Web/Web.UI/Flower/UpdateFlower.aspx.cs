@@ -46,11 +46,12 @@ namespace Web.UI
 
                         if (item != null)
                         {
+                            var currentType = db.Types.Find(item.TypeID);
                             // set data
                             txtName.Text = item.Name;
                             txtPrice.Text = item.Price.ToString();
                             txtQuantity.Text = item.Quantity.ToString();
-                            typeList.SelectedIndex = typeList.Items.IndexOf(typeList.Items.FindByText(item.TypeID.ToString()));
+                            typeList.SelectedIndex = typeList.Items.IndexOf(typeList.Items.FindByText(currentType.Name));
                             description.InnerText = item.Description;
                         }
                         else

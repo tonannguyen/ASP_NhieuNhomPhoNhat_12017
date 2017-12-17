@@ -49,7 +49,7 @@
                 <div class="col-md-12 col-sm-9 col-xs-12">
                   <div id="chart_plot_01" class="demo-placeholder">
                   
-                      <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource1" OnLoad="Chart1_Load" Width="500px">
+                      <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource1" Width="500px">
                           <series>
                               <asp:Series Name="Series1" ChartType="FastLine" XValueMember="CreatedTime" YValueMembers="QuantityOfDate">
                               </asp:Series>
@@ -60,7 +60,7 @@
                           </chartareas>
                       </asp:Chart>
                   
-                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:flower_storeConnectionString %>" OnSelecting="SqlDataSource1_Selecting" SelectCommand="SELECT * FROM [Revenues]"></asp:SqlDataSource>
+                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:flower_storeConnectionString %>" SelectCommand="SELECT [QuantityOfDate], [CreatedTime] FROM [Revenues]"></asp:SqlDataSource>
                   
                     </div>
                 </div>

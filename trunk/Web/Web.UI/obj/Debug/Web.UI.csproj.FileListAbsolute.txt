@@ -86,3 +86,6 @@ F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\bin\EntityFramework.SqlServer.xml
 F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\obj\Debug\Web.UI.csprojResolveAssemblyReference.cache
 F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\obj\Debug\Web.UI.dll
 F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\obj\Debug\Web.UI.pdb
+F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\bin\Web.UI.dll.config
+F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\bin\Web.Model.dll.config
+F:\ASP_NhieuNhomPhoNhat_12017\trunk\Web\Web.UI\obj\Debug\Web.UI.csproj.CoreCompileInputs.cache
